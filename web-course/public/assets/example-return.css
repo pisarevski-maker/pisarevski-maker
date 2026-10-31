@@ -1,0 +1,4 @@
+.example-intro-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #9adaff;border-radius:12px;background:linear-gradient(135deg,#168eff,#1263d2);box-shadow:0 0 18px #168eff38;color:#fff;font:650 16px/1.25 'Segoe UI',system-ui,sans-serif;text-decoration:none;white-space:nowrap;touch-action:manipulation}
+.example-intro-link:hover{background:linear-gradient(135deg,#329fff,#1c75ed);color:#fff}
+.example-intro-link:focus-visible{outline:3px solid #bdefff;outline-offset:4px}
+@media(max-width:600px){.example-intro-link{padding:10px 12px;font-size:15px}}

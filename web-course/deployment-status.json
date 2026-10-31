@@ -1,8 +1,8 @@
 {
   "url": "https://ainarium.com",
-  "version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
-  "previous_version_id": "2ee5233e-4380-40ea-8605-ca51a8d238e9",
-  "total_files": 57,
+  "version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
+  "previous_version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+  "total_files": 59,
   "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
   "browser_checks": {
     "desktop": "Intro loaded at 1280x720 without page scroll; video readyState 4. Course step 5 navigation within viewport. Authors finale loaded without console errors.",
@@ -330,7 +330,7 @@
     "mobile": "390x844; existing right 4% rule preserved"
   },
   "security": {
-    "version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+    "version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
     "https_redirect_enabled": true,
     "minimum_tls": "1.2 (verified in Cloudflare dashboard)",
     "tls_1_3": "already enabled",
@@ -380,7 +380,44 @@
       "/authors": "HTTPS 200 and security policy verified",
       "/gallery": "HTTPS 200 and security policy verified"
     },
-    "configuration_status": "Completed and verified; no passwords, authenticator seed or recovery codes collected."
+    "configuration_status": "Completed and verified; no passwords, authenticator seed or recovery codes collected.",
+    "external_example_frame_allowlist": {
+      "path": "/e-tech*",
+      "origin": "https://e-tech-ainarium.pages.dev",
+      "other_pages_policy": "unchanged"
+    }
   },
-  "package_files": 58
+  "package_files": 60,
+  "showroom_navigation": {
+    "version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
+    "previous_version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+    "same_tab_projects": [
+      "gallery",
+      "electrons",
+      "Git Kindergarden"
+    ],
+    "return_button": "Blue До інтро link on all three examples",
+    "electrons_url": "https://ainarium.com/e-tech",
+    "external_source": "https://e-tech-ainarium.pages.dev/",
+    "source_site_modified": false,
+    "browser_checks": [
+      "Desktop E-Tech, gallery and Git open without increasing tab count; all three return to intro.",
+      "390x844: E-Tech return button visible; no horizontal page overflow. Mobile showroom links use the current tab.",
+      "Live E-Tech lesson loaded inside AINARIUM with no console warnings or errors."
+    ],
+    "verified_live_files": [
+      "app.html",
+      "assets/mobile-view.js",
+      "gallery-draft.html",
+      "gallery.html",
+      "examples/git-kindergarden/index.html",
+      "e-tech.html",
+      "assets/example-return.css"
+    ],
+    "security": "Only /e-tech* permits a frame from the fixed E-Tech hostname; general CSP and server security remain in place.",
+    "limitations": [
+      "External example availability depends on its existing Pages deployment.",
+      "Physical iOS/Safari device not tested."
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31-security-hardening",
+  "version": "2026-10-31-showroom-same-tab",
   "screens": 12,
   "source_directory": "public",
   "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
@@ -7,13 +7,13 @@
   "files": [
     {
       "path": "public/_headers",
-      "bytes": 507,
-      "sha256": "fe6ee83937837a57ad654f7b7f7e687c53620be73f30a9c74174e9d6528285b4"
+      "bytes": 880,
+      "sha256": "9686781434cc516e90cd6a69401349fa3571ea33807e0a43503ccb53c8a317e9"
     },
     {
       "path": "public/app.html",
-      "bytes": 1042340,
-      "sha256": "b0042fa31a9cc68ff1a5dd873fc7d2aec60e83d2cc1484f8c8c50ebff27c8716"
+      "bytes": 1042193,
+      "sha256": "9edd0a57d8af53f8c5c5df62fad9c083f058a6a3d929169bd8caf224e9e3daa3"
     },
     {
       "path": "public/assets/ainaya-hint-prototype.css",
@@ -89,6 +89,11 @@
       "path": "public/assets/course-viewport.css",
       "bytes": 804,
       "sha256": "478f74e10beca99a08ad1cee12805522b8c93210f255d82b716b3dc9b052943d"
+    },
+    {
+      "path": "public/assets/example-return.css",
+      "bytes": 626,
+      "sha256": "5d4d28639877e7eb5da638d3e0b2fbfac8e533551485ff1fe028f7bbe4afafa0"
     },
     {
       "path": "public/assets/feedback.js",
@@ -187,8 +192,8 @@
     },
     {
       "path": "public/assets/mobile-view.js",
-      "bytes": 16144,
-      "sha256": "8333929d7dab5afce73d2f5f6911dd566163db2b986be293c015fdec4f746db1"
+      "bytes": 16050,
+      "sha256": "70158506f030d2ee2fe6dd719afc7625ed8a5185f968dcb65f86d7a7041b599c"
     },
     {
       "path": "public/assets/showroom.css",
@@ -216,14 +221,19 @@
       "sha256": "704878d0a08ab46444da3d4bb40f864b0e48f7ee454b17000ee3039034e82331"
     },
     {
+      "path": "public/e-tech.html",
+      "bytes": 1827,
+      "sha256": "2f51ceeede4c05d287382d40e9147941b9756c28667b5c4f1ff21bc928b6f26c"
+    },
+    {
       "path": "public/examples/git-kindergarden/css/styles.css",
       "bytes": 53939,
       "sha256": "56d3f07db2bf37581632dc7fc7d6e7d0ba810fa578def9d4e947cef5707e1657"
     },
     {
       "path": "public/examples/git-kindergarden/index.html",
-      "bytes": 13617,
-      "sha256": "8bb8105b7f834a7cd0ae9daa6180dc44241084d80ecbcceba4c7bf43a8934bac"
+      "bytes": 13691,
+      "sha256": "790082549a142a99b5b7f119493e8170bb40efd434976350fdc494f82d03f94a"
     },
     {
       "path": "public/examples/git-kindergarden/js/app.js",
@@ -267,13 +277,13 @@
     },
     {
       "path": "public/gallery-draft.html",
-      "bytes": 22309,
-      "sha256": "33501651a97bb7498e1b7e941337375fc0184dd6fc5199d197604d40acb74995"
+      "bytes": 22224,
+      "sha256": "c72b21b164964553c7087d78a36f6c5a0ad08a14b703df47c43f44849cd5117a"
     },
     {
       "path": "public/gallery.html",
-      "bytes": 17164,
-      "sha256": "ab4c349d45c8b5a88b948f0124195ed9722a9dc570970a1baee4c3709afbd511"
+      "bytes": 17234,
+      "sha256": "22becf34add95aa4f13d61af6cc2f4947b9667d8c243ce5144f3de949cd1b88c"
     },
     {
       "path": "public/index.html",

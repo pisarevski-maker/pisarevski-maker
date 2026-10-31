@@ -26,7 +26,7 @@
   function card(title, text, kind) {
     const box=node('article','mobile-idea-card');const preview=node('div','mobile-idea-preview mobile-preview-'+kind);preview.setAttribute('aria-hidden','true');preview.append(node('i',''),node('i',''),node('i',''));box.append(preview,node('h3','',title),node('p','',text));return box;
   }
-  function link(text, href) {const element=node('a','mobile-gallery-link',text+' ↗');element.href=href;return element;}
+  function link(text, href) {const element=node('a','mobile-gallery-link',text+' →');element.href=href;return element;}
   function dismissMobileWorkflows() {
     document.querySelectorAll('#photoEditor[open],#boardTransferDialog[open]').forEach(dialog=>dialog.close());
     document.querySelectorAll('.modal-ov.show,.game-modal-ov.show').forEach(modal=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');});
@@ -40,7 +40,7 @@
       if(data.cards){const grid=node('div','mobile-idea-grid');data.cards.forEach(values=>grid.append(card(...values)));panel.append(grid);}
       if(data.computer)panel.append(notice());
       if(data.showroom){const button=node('button','mobile-gallery-link','Переглянути галерею ідей →');button.type='button';button.addEventListener('click',()=>window.go(10));panel.append(button);}
-      if(data.projects){const grid=node('div','mobile-idea-grid');const projects=[['Власна галерея','Малюнки, фотографії та цифрові композиції, зібрані в одну колекцію.','palette','gallery.html','Переглянути галерею'],['Навчальні матеріали','Приклад того, як пояснювати цікаві теми через власний навчальний сайт.','orbit','https://e-tech-ainarium.pages.dev/','Відкрити E-Tech'],['Git Kindergarden','Навчальний борд із програмування: кроки, практика й маленькі відкриття.','card','examples/git-kindergarden/index.html','Відкрити приклад']];projects.forEach(values=>{const box=card(values[0],values[1],values[2]);const a=link(values[4],values[3]);if(values[3].startsWith('https:')){a.target='_blank';a.rel='noopener';}box.append(a);grid.append(box);});panel.append(grid);}
+      if(data.projects){const grid=node('div','mobile-idea-grid');const projects=[['Власна галерея','Малюнки, фотографії та цифрові композиції, зібрані в одну колекцію.','palette','gallery.html','Переглянути галерею'],['Навчальні матеріали','Приклад того, як пояснювати цікаві теми через власний навчальний сайт.','orbit','e-tech.html','Відкрити E-Tech'],['Git Kindergarden','Навчальний борд із програмування: кроки, практика й маленькі відкриття.','card','examples/git-kindergarden/index.html','Відкрити приклад']];projects.forEach(values=>{const box=card(values[0],values[1],values[2]);const a=link(values[4],values[3]);box.append(a);grid.append(box);});panel.append(grid);}
       slide.append(panel);
     });
     let lastCourseStep = null;
