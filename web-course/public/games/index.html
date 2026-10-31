@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061329">
+  <title>Айная · Сузір’я можливостей</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' rx='15' fill='%230b2947'/%3E%3Cpath d='M25 12v26M12 25h26' stroke='%2377f4ff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="../assets/creative.css">
+</head>
+<body class="arcade-app">
+  <div class="sky" aria-hidden="true"></div>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="AINARIUM — ігрова станція"><span class="brand-symbol">+</span><span>AINARIUM<sup>®</sup><small>УЯВА. СВІТЛО. МОЖЛИВОСТІ.</small></span></a>
+      <span class="station-label"><i></i> Ігрова станція Айнаї</span>
+      <button class="icon-button" id="soundBtn" type="button" aria-pressed="false">♪ <span>Звук вимкнено</span></button>
+    </header>
+
+    <a class="return-link game-return" href="../app.html#games">← До ігрового залу</a>
+    <section class="intro" id="intro">
+      <div><p class="eyebrow">МАЛЕНЬКА ПРИГОДА У ВЕЛИКОМУ ВСЕСВІТІ</p><h1>Запали своє <em>сузір’я.</em></h1><p class="intro-copy">Чотири місії. Твоя сміливість. Айная поруч.</p></div>
+      <div class="constellation" aria-label="Пройдено 0 з 4 місій" id="constellation"><svg viewBox="0 0 220 60" aria-hidden="true"><path d="M15 44 77 15 143 43 205 13"/><circle cx="15" cy="44" r="5"/><circle cx="77" cy="15" r="5"/><circle cx="143" cy="43" r="5"/><circle cx="205" cy="13" r="5"/></svg><span id="progressLabel">Твоє сузір’я ще попереду</span></div>
+    </section>
+
+    <nav class="missions" aria-label="Обрати місію">
+      <button class="mission active" data-mode="flight" aria-pressed="true"><span class="mission-number">01</span><span class="mission-symbol">↗</span><span><b>Зоряний політ</b><small>Ухиляйся · збирай</small></span><span class="mission-check" aria-hidden="true"></span></button>
+      <button class="mission" data-mode="blaster" aria-pressed="false"><span class="mission-number">02</span><span class="mission-symbol">⌁</span><span><b>Світловий імпульс</b><small>Цілься · очищуй шлях</small></span><span class="mission-check" aria-hidden="true"></span></button>
+      <button class="mission" data-mode="bounce" aria-pressed="false"><span class="mission-number">03</span><span class="mission-symbol">◇</span><span><b>Енергія відскоку</b><small>Відбивай · влучай</small></span><span class="mission-check" aria-hidden="true"></span></button>
+      <button class="mission" data-mode="quest" aria-pressed="false"><span class="mission-number">04</span><span class="mission-symbol">✧</span><span><b>Код сузір’я</b><small>Досліджуй · розгадуй</small></span><span class="mission-check" aria-hidden="true"></span></button>
+    </nav>
+
+    <div class="cockpit">
+      <section class="play-panel" aria-label="Ігрове поле">
+        <div class="hud"><span class="mission-tag" id="missionTag">01 / ЗОРЯНИЙ ПОЛІТ</span><span class="hud-stat"><span id="goalLabel">Іскри</span> <b id="score">0 / 12</b></span><span class="hud-hearts" id="hearts" aria-label="3 спроби">♥ ♥ ♥</span><button class="pause-button" id="pauseBtn" type="button" aria-label="Пауза" disabled>Ⅱ</button></div>
+        <div class="viewport" id="viewport">
+          <canvas id="game" width="1000" height="600" tabindex="0" aria-label="Космічна гра. Натисніть Почати місію. Керування: стрілки або WASD. Пауза: P чи Escape."></canvas>
+          <div id="questActions" class="quest-actions" hidden aria-label="Символи сузір’я"></div>
+          <div class="scene-vignette" aria-hidden="true"></div>
+          <div class="game-banner" id="gameBanner" role="status" aria-live="polite"></div>
+          <div class="overlay" id="overlay">
+            <div class="overlay-content"><span class="overlay-kicker" id="overlayKicker">ЗВ’ЯЗОК З АЙНАЄЮ ВСТАНОВЛЕНО</span><span class="orbit-icon" id="overlayIcon" aria-hidden="true">↗</span><h2 id="overlayTitle">Вирушай назустріч зорям</h2><p id="overlayText">Проведи кораблик крізь астероїди. Збери 12 іскор — із них почнеться твій новий світ.</p><button class="primary" id="startBtn" type="button">Почати місію <span>↗</span></button><button class="text-button" id="retryBtn" type="button" hidden>Зіграти ще раз</button></div>
+          </div>
+          <button id="abilityBtn" class="ability" hidden type="button">Імпульс <small>SPACE</small></button>
+        </div>
+        <div class="flightline"><span id="controlsText">↔ ↕ Стрілки / WASD · або веди пальцем по полю</span><span id="timer">65 с</span></div>
+      </section>
+
+      <aside class="guide-panel">
+        <div class="guide-top"><span class="signal"><i></i> АЙНАЯ НА ЗВ’ЯЗКУ</span><span class="tiny-stars">✦ · ✧</span></div>
+        <div class="narrator"><div class="narrator-orbit" aria-hidden="true"></div><img id="ainaya" src="assets/ainaya-welcome.webp" alt="Айная — твоя космічна провідниця"><span class="hologram-label">ТВІЙ НАПАРНИК</span></div>
+        <div class="guide-message"><span class="speech-tail" aria-hidden="true"></span><p id="guideText">Я допоможу тримати курс. А куди летіти — вирішуєш ти.</p></div>
+        <div class="mission-details"><span class="eyebrow">ТВОЄ ЗАВДАННЯ</span><h3 id="detailTitle">Збери світло, збережи курс</h3><p id="detailText">Блакитні іскри — твої. Астероїди краще облітати. Щит допоможе пережити одну зустріч.</p><div class="legend" id="legend"><span><i class="spark-dot"></i> Іскра</span><span><i class="shield-dot"></i> Щит</span><span><i class="rock-dot"></i> Астероїд</span></div></div>
+        <p class="record" id="record">Твоя перша пригода починається тут.</p>
+      </aside>
+    </div>
+    <section class="game-ai-panel"><p><b>Айная підказує:</b> «Ти можеш створити таку саму, схожу або зовсім власну гру. Опиши її своєму помічнику — я підготувала завдання й комплект файлів».</p><button class="creative-primary" data-ai-prompt="game">Створити свою гру з AI ↗</button><span class="mobile-ai-note">На телефоні грай. Промпт для створення власного сайту — на комп’ютері.</span></section>
+    <footer><span>Людина задумує. <b>AI допомагає втілити.</b></span><span>Грай у своєму темпі · <kbd>P</kbd> — пауза</span></footer>
+  </main>
+  <script type="module" src="game.mjs?v=1"></script><script src="../assets/creative-transfer.js" defer></script>
+</body>
+</html>

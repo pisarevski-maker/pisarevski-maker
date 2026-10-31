@@ -12,6 +12,7 @@
     {label:'Перша перемога',pose:'welcome',text:'Перший крок зроблено. Тепер спробуй змінити одну деталь — і ти побачиш, як керуєш результатом.'},
     {label:'Наступний крок',pose:'point',text:'Спробуй додати одну деталь до свого сайту. А в шоурумі чекають ідеї для наступних проєктів.'},
     {label:'Шоурум ідей',pose:'present',text:'Галерея, навчальні матеріали або Git Kindergarden. Обери напрям — наступна історія буде твоєю.'},
+    {label:'Ігровий зал',pose:'welcome',text:'Тут можна спробувати п’ять різних ігор. А потім придумати власну: я підготувала промпт і вихідні файли.'},
     {label:'Від авторів',pose:'present',text:'Людина задумує, AI допомагає втілити. Дякуємо, що твориш разом із нами.'}
   ];
   const slides=[...document.querySelectorAll('.slide.optimized-slide')];
@@ -31,12 +32,14 @@
     ['courseNarrator','courseHeaderNarrator'].forEach(id=>{const image=document.getElementById(id);const src='assets/ainaya-'+step.pose+'.webp';if(image.getAttribute('src')!==src)image.src=src;image.dataset.pose=step.pose;});
     [...dots.children].forEach((button,i)=>{if(i===index)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');});
     if(index===9)document.getElementById('nextBtn').textContent='Шоурум ідей →';
-    if(index===10)document.getElementById('nextBtn').textContent='Від авторів →';
-    history.replaceState(null,'',index===11?'#authors':index===10?'#showroom':'#step-'+(index+1));
+    if(index===10)document.getElementById('nextBtn').textContent='Ігровий зал →';
+    if(index===11)document.getElementById('nextBtn').textContent='Від авторів →';
+    history.replaceState(null,'',index===12?'#authors':index===11?'#games':index===10?'#showroom':'#step-'+(index+1));
   };
   const hash=location.hash;
   if(hash==='#showroom')go(10);
-  else if(hash==='#authors')go(11);
+  else if(hash==='#games')go(11);
+  else if(hash==='#authors')go(12);
   else if(/^#step-\d+$/.test(hash))go(Math.min(slides.length-1,Math.max(0,Number(hash.slice(6))-1)));
   window.updateCourseShell();
 })();

@@ -109,7 +109,7 @@
       const caption=document.createElement('figcaption');const title=document.createElement('h3');title.className='photo-title';title.textContent=photo.title||'Без назви';caption.appendChild(title);
       if(photo.caption){const text=document.createElement('p');text.className='photo-caption';text.textContent=photo.caption;caption.appendChild(text);}
       const actions=document.createElement('div');actions.className='photo-actions';
-      actions.append(actionButton('Редагувати','photo-edit',()=>editPhoto(photo.id)),actionButton('Prompt для AI','photo-prompt',()=>window.dispatchEvent(new CustomEvent('ainarium:photo-prompt',{detail:{photoId:photo.id}}))));
+      actions.append(actionButton('Малювати','photo-paint',()=>window.dispatchEvent(new CustomEvent('ainarium:paint-photo',{detail:{photoId:photo.id}}))),actionButton('Редагувати','photo-edit',()=>editPhoto(photo.id)),actionButton('Prompt для AI','photo-prompt',()=>window.dispatchEvent(new CustomEvent('ainarium:photo-prompt',{detail:{photoId:photo.id}}))));
       const earlier=actionButton('←','photo-move-up',()=>movePhoto(photo.id,-1));earlier.setAttribute('aria-label','Перемістити «'+photo.title+'» раніше');earlier.disabled=index===0;
       const later=actionButton('→','photo-move-down',()=>movePhoto(photo.id,1));later.setAttribute('aria-label','Перемістити «'+photo.title+'» пізніше');later.disabled=index===board.photos.length-1;
       actions.append(earlier,later);caption.appendChild(actions);card.append(img,caption);card.addEventListener('dblclick',()=>editPhoto(photo.id));card.addEventListener('keydown',event=>{if(event.target===card&&event.key==='Enter'){event.preventDefault();editPhoto(photo.id);}});installDrag(card,photo);canvas.appendChild(card);
@@ -133,7 +133,7 @@
   }
   function inspectImage(blob){return new Promise((resolve,reject)=>{const url=URL.createObjectURL(blob),image=new Image();image.onload=()=>{URL.revokeObjectURL(url);resolve({width:image.naturalWidth,height:image.naturalHeight});};image.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Unsupported image'));};image.src=url;});}
   async function addFiles(fileList){
-    await ready;if(adding)return;const files=[...fileList];if(!files.length)return;adding=true;$('addPhotosBtn').disabled=true;
+    await ready;if(adding)return 0;const files=[...fileList];if(!files.length)return 0;adding=true;$('addPhotosBtn').disabled=true;
     const board=active(),before=structuredClone(board.photos),newRecords=[],rejected=[];
     try{
       for(const file of files){
@@ -147,7 +147,8 @@
       if(newRecords.length){await writeOperations([{store:'boards',value:board},...newRecords.map(value=>({store:'photos',value}))]);newRecords.forEach(record=>memoryPhotos.set(record.id,record.blob));render();}
       const added=newRecords.length;
       notify((added?'Зображень додано: '+added+'. ':'')+(rejected.length?'Не додано: '+rejected.join(', ')+'. Підтримуються JPG, PNG, WebP, GIF та AVIF до 20 МБ.':added?(database?'Фото збережені у цьому браузері.':'Цього разу фото доступні лише до закриття сторінки. Збережи набір.'): 'Обери зображення для дошки.'));
-    }catch(_){board.photos=before;render();notify('Браузер не зміг зберегти фото. Можливо, бракує місця. Спробуй менші файли.');}
+      return added;
+    }catch(_){board.photos=before;render();notify('Браузер не зміг зберегти фото. Можливо, бракує місця. Спробуй менші файли.');return 0;}
     finally{adding=false;$('addPhotosBtn').disabled=false;$('photoInput').value='';}
   }
   function editPhoto(id){
@@ -180,7 +181,7 @@
   window.addEventListener('resize',positionCards);
   let resolveReady;
   const ready=new Promise(resolve=>{resolveReady=resolve;});
-  window.AinariumBoard={ready,getState:()=>({version:1,activeBoardId:state.activeBoardId,boards:state.boards.map(publicBoard)}),getActiveBoard:()=>publicBoard(active()),getPhotoBlob,notify};
+  window.AinariumBoard={ready,getState:()=>({version:1,activeBoardId:state.activeBoardId,boards:state.boards.map(publicBoard)}),getActiveBoard:()=>publicBoard(active()),getPhotoBlob,addFiles,notify};
   (async()=>{
     try{database=await openDatabase();const boards=await readStore('boards');state.boards=boards.map(normalizeBoard);const setting=await readStore('settings','activeBoardId');state.activeBoardId=setting?.value||'';}
     catch(_){database=null;notify('Сховище браузера недоступне. Працювати можна, але перед закриттям збережи набір.');}

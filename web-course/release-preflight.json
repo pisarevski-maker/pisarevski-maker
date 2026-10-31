@@ -1,0 +1,104 @@
+{
+  "status": "ready_for_user_mobile_review",
+  "published": false,
+  "screens": 13,
+  "public_package_files": 92,
+  "changed_or_added_files": 41,
+  "tests": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0,
+    "real_email_sent": false
+  },
+  "javascript_syntax": {
+    "checked": 28,
+    "failed": 0
+  },
+  "local_links": {
+    "html_pages": 15,
+    "missing": []
+  },
+  "wrangler": {
+    "version": "4.156.0",
+    "command": "npx --offline --yes wrangler@4.156.0 deploy --dry-run --outdir ../../../work/creative-release-preparation/bundle",
+    "result": "passed; --dry-run: exiting now.",
+    "uploaded": false
+  },
+  "protected_files_unchanged": {
+    "worker.mjs": "f31b0bc9443e941231327173d972362465da76eaf5a4671e8ae4c4ccf0c66b32",
+    "wrangler.jsonc": "cfca61e4890c7fd924bb5581afddd353245f3075707dc3aa42449420e7976168",
+    "deploy.ps1": "ddca8367dabd071a401b963dbbef252170cc2939bfd6dd7a7281f7dcbe880d3c",
+    "public/_headers": "9686781434cc516e90cd6a69401349fa3571ea33807e0a43503ccb53c8a317e9"
+  },
+  "preview": "http://127.0.0.1:8894/index.html",
+  "mobile_user_review": "pending",
+  "browser_evidence": {
+    "status": "local_review_only",
+    "production_changed": false,
+    "screens": 13,
+    "automated": {
+      "studio_and_hockey_tests": 13,
+      "failures": 0
+    },
+    "browser_checks": {
+      "story": "Catch card opens full-screen same-origin hockey; return restores first scene without course reload.",
+      "hockey": "Start via hand mallet and central button; pause checked; 390x844 layout fits horizontally.",
+      "course": "13 steps; showroom -> game hall -> authors -> game hall verified. Mobile active step visible.",
+      "gallery": "Draw -> sample -> save to active board completed; saved drawing visible as new card. Editing an existing card loads that image into photo layer.",
+      "studio": "Undo/redo, independent layers, ink mark, PNG download, photo import, exposure +2, project download, blank document, project restore tested.",
+      "exported_png": "1200x800 PNG CRC valid; painted center RGBA [194,116,127,255].",
+      "restored_project": "Three layers and photo exposure +2 restored.",
+      "prompts": "Own idea included; canonical site and kit references present; clipboard copy and text download succeeded; game kit downloaded successfully.",
+      "mobile": "Studio 390x844: no horizontal overflow; mobile prompt guidance visible; game hall has four missions.",
+      "errors": "No browser errors/warnings in checked views."
+    },
+    "limitations": [
+      "Physical touch devices and Safari not tested.",
+      "Full browser victory checked for original constellation quest in prior game version; new hockey scoring/winning covered by deterministic simulation tests.",
+      "Local static preview does not send feedback mail; existing server code was not changed."
+    ],
+    "monkeys": {
+      "tests_passed": 10,
+      "tests_failed": 0,
+      "hall_games": 5,
+      "native_browser_drag": {
+        "result": "Projectile launched",
+        "angle_degrees": 47,
+        "power_percent": 68
+      },
+      "browser_victory": "1 vs 1: hits changed opponent to 2 hearts, then 1, then 0; victory overlay and replay verified.",
+      "ai_volley": "3 vs 3: all three human turns, AI volley phase, pause verified.",
+      "layouts": {
+        "desktop_1280x720": "Start inside field; controls bottom 635.5 < 720; no horizontal overflow.",
+        "mobile_390x844": "Start inside field; two-monkey team, angle slider and throw worked; no horizontal overflow."
+      },
+      "prompt": "Default monkey idea, drag mechanic, and three-heart rule included.",
+      "console_errors": 0,
+      "physical_phone_tested": false
+    },
+    "studio_modes": {
+      "default": "simple",
+      "simple": {
+        "visible_tools": 3,
+        "visible_palette_colors": 8,
+        "stroke_width_presets": 3
+      },
+      "artist": {
+        "visible_tools": 12,
+        "visible_palette_colors": 20,
+        "layers_visible": true,
+        "photo_controls_visible": true
+      },
+      "artwork_preserved": "Exported PNG before and after switching is byte-for-byte identical.",
+      "png_sha256": "2c13b790243b9462e6129c020be302c377a6d26bd53319bf311f6126c48e94d8",
+      "profiles": "Simple wide stroke and coral color restored; artist pastel and size 100 restored.",
+      "mobile": "390x844: buttons 102 px high; switching works; no horizontal overflow. 320 px: no horizontal overflow.",
+      "gallery": "Embedded studio starts in simple mode and retains Add to board action.",
+      "physical_phone_tested": false
+    }
+  },
+  "archive": "ainarium-cloudflare-ready-for-mobile-review.zip",
+  "secret_in_archive": false,
+  "external_flat_deployment_folder": "Not changed; use this complete Worker package rather than publishing only static files.",
+  "source_branch": "developer"
+}

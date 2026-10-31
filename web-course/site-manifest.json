@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-31-mobile-step-navigation",
-  "screens": 12,
+  "version": "2026-10-31-creative-release-mobile-review",
+  "screens": 13,
   "source_directory": "public",
   "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
   "private_recipient_in_source": false,
@@ -11,9 +11,14 @@
       "sha256": "9686781434cc516e90cd6a69401349fa3571ea33807e0a43503ccb53c8a317e9"
     },
     {
+      "path": "public/airhockey.html",
+      "bytes": 3336,
+      "sha256": "e8f6800c6f83b7d740623ca819d3f286d410e0ceac86fac9c98305b198b24ec7"
+    },
+    {
       "path": "public/app.html",
-      "bytes": 1042193,
-      "sha256": "9edd0a57d8af53f8c5c5df62fad9c083f058a6a3d929169bd8caf224e9e3daa3"
+      "bytes": 1045188,
+      "sha256": "c3972e672f29722b021ec31bc95ce02e17c15f6cdbee8c241a9761fbb5c18995"
     },
     {
       "path": "public/assets/ainaya-hint-prototype.css",
@@ -52,13 +57,13 @@
     },
     {
       "path": "public/assets/authors-finale-bridge.js",
-      "bytes": 385,
-      "sha256": "65ece7cbad85dcb71a8524a5ba73ea9182f797bd414b958307441f08e7930f3d"
+      "bytes": 396,
+      "sha256": "1c7a69c0fa7b32036ae7191a1c12eea83629d0446408fae03f3f6570757409ec"
     },
     {
       "path": "public/assets/authors-finale-shell.css",
-      "bytes": 1139,
-      "sha256": "8b03871ee8a7fbf456a6d17cd0c061b871c37b405f1e4609faef1f2afea5fcbc"
+      "bytes": 1148,
+      "sha256": "627438720da76f2ee1018e8c6ebd6b3c1d94a476352546603bf2d277a5b4ea9a"
     },
     {
       "path": "public/assets/boy-creator.png",
@@ -72,8 +77,8 @@
     },
     {
       "path": "public/assets/course-shell.js",
-      "bytes": 4601,
-      "sha256": "1d1275b6d047a08fd3428b706a7c0eae0a7034d36fbce753c66a60c79e655367"
+      "bytes": 5043,
+      "sha256": "7be0077fefdd27610e05bad9116f2716712f947db32e7b62b240c40d5eae89f2"
     },
     {
       "path": "public/assets/course-sky.png",
@@ -91,6 +96,16 @@
       "sha256": "478f74e10beca99a08ad1cee12805522b8c93210f255d82b716b3dc9b052943d"
     },
     {
+      "path": "public/assets/creative-transfer.js",
+      "bytes": 10036,
+      "sha256": "23c34f2246f5cae1559178668ec76f918299324be6f451800eb2298129a66042"
+    },
+    {
+      "path": "public/assets/creative.css",
+      "bytes": 8710,
+      "sha256": "9c7082442cb7f63daff99aa4d8f86bb35e6bfc0447ebc81f56d38a5276c68a96"
+    },
+    {
       "path": "public/assets/example-return.css",
       "bytes": 626,
       "sha256": "5d4d28639877e7eb5da638d3e0b2fbfac8e533551485ff1fe028f7bbe4afafa0"
@@ -99,6 +114,16 @@
       "path": "public/assets/feedback.js",
       "bytes": 1866,
       "sha256": "5a3d9d291a1705fce9a992d6c47b1e3cfccdda4a3918a204f06699f948e4f121"
+    },
+    {
+      "path": "public/assets/gallery-studio.css",
+      "bytes": 491,
+      "sha256": "cffb19bd73b2278609a931c0e0daec413bae6dc5c590dbeb835c3176a2bfdbdd"
+    },
+    {
+      "path": "public/assets/gallery-studio.js",
+      "bytes": 2582,
+      "sha256": "23e60fbecc04e2ef2a6c61db1d81727e162bbef36fe7618ae9a06f31b982825f"
     },
     {
       "path": "public/assets/gallery/course-invite.css",
@@ -122,8 +147,28 @@
     },
     {
       "path": "public/assets/gallery/gallery.js",
-      "bytes": 21332,
-      "sha256": "e0e76c9e30f4ca8e424e9d644a0e8f00c9d368d2eecda310bc107eb8366bf4ee"
+      "bytes": 21516,
+      "sha256": "f1c63e3482a4edc637c2a6a6b20b30ded1c9e190ebdfe4f5aa9d883cd338866c"
+    },
+    {
+      "path": "public/assets/game-hall.css",
+      "bytes": 2681,
+      "sha256": "2fc79b103a74b17ab5df17df07dab5955f614e92e3b7a75b8813f99d19536a0f"
+    },
+    {
+      "path": "public/assets/hockey-core.mjs",
+      "bytes": 2683,
+      "sha256": "2d6227fa902f4cb31ff9ba3ee24fe7b3ab2eaeb6d30f276b397410fc48d2b083"
+    },
+    {
+      "path": "public/assets/hockey.css",
+      "bytes": 5664,
+      "sha256": "7c6ebf350e56b861ab7ad5cc37d096b1b687e4f869db38bbd81cf7912e1e6f50"
+    },
+    {
+      "path": "public/assets/hockey.mjs",
+      "bytes": 7809,
+      "sha256": "48a209655994f7e1d10d6b0eee73c8aa2bcfcf12aba6d47565baf229e976c1be"
     },
     {
       "path": "public/assets/intro-playback.js",
@@ -192,18 +237,63 @@
     },
     {
       "path": "public/assets/mobile-view.js",
-      "bytes": 16753,
-      "sha256": "d7f752ab1d534fcfd07546d1052f7a1cf56de4b2981c934dbc5f5c62555c0ef1"
+      "bytes": 17896,
+      "sha256": "fd2078277fc37f0976d8237d890c20967de3ea6e25e46758ee3a4f712f419c5b"
+    },
+    {
+      "path": "public/assets/monkeys-core.mjs",
+      "bytes": 5288,
+      "sha256": "487521b008c3bfe86d9c22a55a794addbb4d984caca726c9e17071ff3b427ade"
+    },
+    {
+      "path": "public/assets/monkeys.css",
+      "bytes": 10189,
+      "sha256": "0654c8a42be3c06b617ff519aeea03d88d11e49e13fe288f92a78df0a1b40420"
+    },
+    {
+      "path": "public/assets/monkeys.mjs",
+      "bytes": 16356,
+      "sha256": "3acedfeddaca065db77626b9ca519c232cc2f6b2fbbadfac0e53c4997829ce4a"
     },
     {
       "path": "public/assets/showroom.css",
-      "bytes": 16816,
-      "sha256": "104c835eeafc4364f9ca01445c0c2fb26dad746a9556a857aa1cdd46fd42b780"
+      "bytes": 18015,
+      "sha256": "c2a7a97d3d22d78857dbe18d59d3f488f58e4da882fb10b72f13e5bee68d21ca"
+    },
+    {
+      "path": "public/assets/story-hockey.css",
+      "bytes": 2344,
+      "sha256": "a47f9940fd469a2dcdcfccd5bec095eefbf83a1eb21387717b8a60f6fb64e7b3"
+    },
+    {
+      "path": "public/assets/story-hockey.js",
+      "bytes": 1513,
+      "sha256": "092589770f6978bb376de377072881cc2e7f46bed37df4bb48f4d1da21023626"
+    },
+    {
+      "path": "public/assets/studio-core.mjs",
+      "bytes": 8596,
+      "sha256": "921a92afe275d23cba4ab61b2ffc52a364f0f944662f3624a2631a8c0cd11ceb"
+    },
+    {
+      "path": "public/assets/studio-modes.css",
+      "bytes": 8054,
+      "sha256": "18f81c65d81ae8cfd6e521e9ec51d1bcbcb5a2bf7ad664d18bf675d8637cbfab"
+    },
+    {
+      "path": "public/assets/studio.css",
+      "bytes": 11597,
+      "sha256": "b08fc9fe8f507f16405db0c5bf4017abeaee371b2f7ef451abf236f28b56c619"
+    },
+    {
+      "path": "public/assets/studio.mjs",
+      "bytes": 25472,
+      "sha256": "001a8a507ab0daa15212bd4f931eb5e9319de0ceadb0c3a546c9efbaeaacceb4"
     },
     {
       "path": "public/authors.html",
-      "bytes": 21661,
-      "sha256": "ccb3a6e06f17d5933e636a791a5c0afd56404208698d8f5187a6864e0f95fb53"
+      "bytes": 21669,
+      "sha256": "7602e3d45c25b9bbbfc6b1a597927ddd11c5eac81fc3be67d7e7578cdd82d723"
     },
     {
       "path": "public/bg-desktop.png",
@@ -219,6 +309,21 @@
       "path": "public/bg.png",
       "bytes": 4112356,
       "sha256": "704878d0a08ab46444da3d4bb40f864b0e48f7ee454b17000ee3039034e82331"
+    },
+    {
+      "path": "public/creative.html",
+      "bytes": 3576,
+      "sha256": "3e690c3cd32df0377e798bea2a79bb92b2498fc840ea49c272881fc2a614826a"
+    },
+    {
+      "path": "public/downloads/ainarium-studio-kit.zip",
+      "bytes": 2819881,
+      "sha256": "4f1671afd649529d7bf8ba6f05333edfdb2000e673072a0026e78cc178123558"
+    },
+    {
+      "path": "public/downloads/ainaya-games-kit.zip",
+      "bytes": 8024166,
+      "sha256": "6601c27d383e970d627fbcb38aaf4781b6d8eebcd06ebfdbd1077d15ac11f16a"
     },
     {
       "path": "public/e-tech.html",
@@ -282,8 +387,53 @@
     },
     {
       "path": "public/gallery.html",
-      "bytes": 17245,
-      "sha256": "ea6140344aa525cdd85ffcdae023bc2ba749892aadae4e91e75c23d105ad282f"
+      "bytes": 17355,
+      "sha256": "9f43384c5e40a04ae90626b5aa7b341c290b02aa4c286dcb4b19291aa3574b68"
+    },
+    {
+      "path": "public/games/assets/ainaya-point.webp",
+      "bytes": 279302,
+      "sha256": "bed0b9e321ac7c37f7568dafa94d1c2c34a8b1395a23f313075b79d6eb270702"
+    },
+    {
+      "path": "public/games/assets/ainaya-present.webp",
+      "bytes": 277434,
+      "sha256": "27e23e1b24481ccce1ceab0d20bc74d1acd41bacb41e3f30616899fcba73aa14"
+    },
+    {
+      "path": "public/games/assets/ainaya-think.webp",
+      "bytes": 222956,
+      "sha256": "4ab41a41710c773852104136581fd82ce81c0df80fe3277baa1573150a69fa39"
+    },
+    {
+      "path": "public/games/assets/ainaya-welcome.webp",
+      "bytes": 281402,
+      "sha256": "5e9d7ae89f55ea400614411bfb00a69bada99811cf3d41d3398cacc40ce0973d"
+    },
+    {
+      "path": "public/games/assets/sky.png",
+      "bytes": 2536492,
+      "sha256": "634cbaf78484b8373d05650434c57b8b4f83e4857272ee039e7c46d5a79745e4"
+    },
+    {
+      "path": "public/games/game.mjs",
+      "bytes": 23497,
+      "sha256": "7905bebec6386ac19829831e48cf748563aeb06cdb435d01608f5b297ca90aa3"
+    },
+    {
+      "path": "public/games/index.html",
+      "bytes": 7790,
+      "sha256": "7f57081ebdbe7a0a95a877c4e25b9f6a18803c921c51865df19d99b98893982b"
+    },
+    {
+      "path": "public/games/simulation.mjs",
+      "bytes": 8633,
+      "sha256": "2bc1dc8f211ef27348f2dd55c97cc5c735a25441056991d3b92cf3df8ea79bea"
+    },
+    {
+      "path": "public/games/style.css",
+      "bytes": 15737,
+      "sha256": "fc851a72764786347ab388f84c4a918339739d3a30d785609b1e7c615e79520f"
     },
     {
       "path": "public/index.html",
@@ -299,6 +449,16 @@
       "path": "public/logo.png",
       "bytes": 14676,
       "sha256": "9921c2ebf3ae42626032e0fdf41bfb7021ce9163d4a8ca1c08b4a43d05f44e0b"
+    },
+    {
+      "path": "public/monkeys.html",
+      "bytes": 5023,
+      "sha256": "bd5b96f0358dc015508587c866c727a8506d919435a3fab4345f72b0a39e12d1"
+    },
+    {
+      "path": "public/studio.html",
+      "bytes": 9940,
+      "sha256": "c214df90df9047f5b8824ca164d23dc25416baad0dcc3e51186767988849e6e1"
     },
     {
       "path": "public/vibecoding-concept.png",

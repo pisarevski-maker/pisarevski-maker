@@ -472,5 +472,23 @@
       "sha256_matches": true
     },
     "change": "Center active step in mobile menu after navigation and when entering mobile layout."
+  },
+  "prepared_release": {
+    "status": "awaiting_user_mobile_review",
+    "published": false,
+    "archive": "ainarium-cloudflare-ready-for-mobile-review.zip",
+    "screens": 13,
+    "public_package_files": 92,
+    "changed_or_added_files": 41,
+    "preview_url": "http://127.0.0.1:8894/app.html#showroom",
+    "protected_files_unchanged": {
+      "worker.mjs": "f31b0bc9443e941231327173d972362465da76eaf5a4671e8ae4c4ccf0c66b32",
+      "wrangler.jsonc": "cfca61e4890c7fd924bb5581afddd353245f3075707dc3aa42449420e7976168",
+      "deploy.ps1": "ddca8367dabd071a401b963dbbef252170cc2939bfd6dd7a7281f7dcbe880d3c",
+      "public/_headers": "9686781434cc516e90cd6a69401349fa3571ea33807e0a43503ccb53c8a317e9"
+    },
+    "preflight": "release-preflight.json",
+    "automated_tests_passed": 41,
+    "source_branch": "developer"
   }
 }
