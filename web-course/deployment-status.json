@@ -1,7 +1,7 @@
 {
   "url": "https://ainarium.com",
-  "version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
-  "previous_version_id": "f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd",
+  "version_id": "2ee5233e-4380-40ea-8605-ca51a8d238e9",
+  "previous_version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
   "total_files": 57,
   "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
   "browser_checks": {
@@ -319,5 +319,14 @@
     "verified_files": 57,
     "feedback_validation_status": 400,
     "dns_cache_note": "Cloudflare authoritative and 1.1.1.1 respond with A records; browser opens HTTPS. Default system resolver still returns a stale negative answer."
+  },
+  "intro_guide_correction": {
+    "change": "Move intro Ainaya from lower left to lower right",
+    "version_id": "2ee5233e-4380-40ea-8605-ca51a8d238e9",
+    "previous_version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
+    "index_sha256": "96771e0224eaee167503ea2e137914b2c40cee09e44c62b544d52f8ee9602ab7",
+    "live_index_verified": true,
+    "desktop": "1280x720; right 5%; no video or button overlap",
+    "mobile": "390x844; existing right 4% rule preserved"
   }
 }
