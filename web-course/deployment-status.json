@@ -1,0 +1,290 @@
+{
+  "url": "https://wispy-wildflower-4a02.pisarevski.workers.dev",
+  "version_id": "f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd",
+  "previous_version_id": "e9fe2877-18dd-4375-90f6-49e090c9e3b2",
+  "verified_files": 56,
+  "total_files": 56,
+  "checks": [
+    {
+      "path": "app.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-hint-prototype.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-hint-prototype.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-point.webp",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-present.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-present.webp",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-think.webp",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/ainaya-welcome.webp",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/authors-finale-bridge.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/authors-finale-shell.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/boy-creator.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/course-shell.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/course-shell.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/course-sky.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/course-theme.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/course-viewport.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/gallery/course-invite.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/gallery/gallery-transfer.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/gallery/gallery-transfer.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/gallery/gallery.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/gallery/gallery.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/intro-playback.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/intro-poster.jpg",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/journey-poster.jpg",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/journey-transition-e549e8b13516.mp4",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/kinetic-caption.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/kinetic-caption.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/landing-unified-v3.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/library/AI-README.md",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/library/AINARIUM-live-orb.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/library/AINARIUM-neon-card.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/library/AINARIUM-space-sky.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/library/library.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/mobile-view.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/mobile-view.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/showroom.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "authors.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "bg-desktop.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "bg-mobile.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "bg.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/css/styles.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/index.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/app.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/failures.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/git-engine.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/quiz.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/sandbox.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/state.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/tutorial.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "examples/git-kindergarden/js/visualizer.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "gallery-draft.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "gallery.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "intro.mp4",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "logo.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "vibecoding-concept.png",
+      "status": 200,
+      "sha256_matches": true
+    }
+  ],
+  "email_status": "Not connected: Cloudflare Email Sending API returned Unauthorized 2036. Form clearly reports that no message was sent."
+}
