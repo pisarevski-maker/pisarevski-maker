@@ -347,7 +347,7 @@
       "/wrangler.jsonc": 404,
       "/.git/config": 404
     },
-    "account_2fa": "Setup pending: user needs to create Cloudflare password for a Google-login account.",
+    "account_2fa": "Active: Mobile two-factor authentication is active. Verified in Cloudflare dashboard on 2026-10-31.",
     "dnssec": "Not enabled; manual user action required after automatic approval rejection",
     "ct_monitoring": "Enabled, recipient enrollment still required",
     "bot_fight_mode": "Left off to preserve AI assistant/API access; existing per-IP feedback limiter remains active",
