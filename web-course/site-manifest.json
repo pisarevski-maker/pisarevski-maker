@@ -1,0 +1,289 @@
+{
+  "version": "2026-10-31",
+  "screens": 12,
+  "source_directory": "public",
+  "feedback_delivery": "Cloudflare email setup pending; form does not report false delivery",
+  "private_recipient_in_source": false,
+  "files": [
+    {
+      "path": "public/app.html",
+      "bytes": 1042340,
+      "sha256": "b0042fa31a9cc68ff1a5dd873fc7d2aec60e83d2cc1484f8c8c50ebff27c8716"
+    },
+    {
+      "path": "public/assets/ainaya-hint-prototype.css",
+      "bytes": 8116,
+      "sha256": "3862b84a0e45d9eadfae18deecf855825eee981921d0517575cff73cd5d160fb"
+    },
+    {
+      "path": "public/assets/ainaya-hint-prototype.js",
+      "bytes": 1853,
+      "sha256": "7ae3af54b468d6e270cc85be40437255237cdd9447a3304f0ead1ff19afe58ab"
+    },
+    {
+      "path": "public/assets/ainaya-point.webp",
+      "bytes": 279302,
+      "sha256": "bed0b9e321ac7c37f7568dafa94d1c2c34a8b1395a23f313075b79d6eb270702"
+    },
+    {
+      "path": "public/assets/ainaya-present.png",
+      "bytes": 2219067,
+      "sha256": "2fbcbb4cf1e21485a7340cf25e8f154646e62662a3a71ce274c3d9ab00ea29f5"
+    },
+    {
+      "path": "public/assets/ainaya-present.webp",
+      "bytes": 277434,
+      "sha256": "27e23e1b24481ccce1ceab0d20bc74d1acd41bacb41e3f30616899fcba73aa14"
+    },
+    {
+      "path": "public/assets/ainaya-think.webp",
+      "bytes": 222956,
+      "sha256": "4ab41a41710c773852104136581fd82ce81c0df80fe3277baa1573150a69fa39"
+    },
+    {
+      "path": "public/assets/ainaya-welcome.webp",
+      "bytes": 281402,
+      "sha256": "5e9d7ae89f55ea400614411bfb00a69bada99811cf3d41d3398cacc40ce0973d"
+    },
+    {
+      "path": "public/assets/authors-finale-bridge.js",
+      "bytes": 385,
+      "sha256": "65ece7cbad85dcb71a8524a5ba73ea9182f797bd414b958307441f08e7930f3d"
+    },
+    {
+      "path": "public/assets/authors-finale-shell.css",
+      "bytes": 1139,
+      "sha256": "8b03871ee8a7fbf456a6d17cd0c061b871c37b405f1e4609faef1f2afea5fcbc"
+    },
+    {
+      "path": "public/assets/boy-creator.png",
+      "bytes": 1897766,
+      "sha256": "dc0e4853d6e2847d0de7e72d276ab0f61622dccfbbed73086038ef5aca97a094"
+    },
+    {
+      "path": "public/assets/course-shell.css",
+      "bytes": 17251,
+      "sha256": "0a8787f32aa6227199acd177eac1cb62fe6fd913af7171fd5a3c6da1bb608e50"
+    },
+    {
+      "path": "public/assets/course-shell.js",
+      "bytes": 4601,
+      "sha256": "1d1275b6d047a08fd3428b706a7c0eae0a7034d36fbce753c66a60c79e655367"
+    },
+    {
+      "path": "public/assets/course-sky.png",
+      "bytes": 2536492,
+      "sha256": "634cbaf78484b8373d05650434c57b8b4f83e4857272ee039e7c46d5a79745e4"
+    },
+    {
+      "path": "public/assets/course-theme.css",
+      "bytes": 30210,
+      "sha256": "55bd1203cae94c3b58977bb0e1be281390e6ace61aec09e84e5ba899ce1c5132"
+    },
+    {
+      "path": "public/assets/course-viewport.css",
+      "bytes": 804,
+      "sha256": "478f74e10beca99a08ad1cee12805522b8c93210f255d82b716b3dc9b052943d"
+    },
+    {
+      "path": "public/assets/gallery/course-invite.css",
+      "bytes": 927,
+      "sha256": "0d82042effb1aaca2851406f0565faa993cb78fead2b8e3fc9fdc544a1484ebf"
+    },
+    {
+      "path": "public/assets/gallery/gallery-transfer.css",
+      "bytes": 4914,
+      "sha256": "b5275238f783711ee925ce9091f7145b657e1ed0bf54ec79d2c48eaf826e8f21"
+    },
+    {
+      "path": "public/assets/gallery/gallery-transfer.js",
+      "bytes": 30138,
+      "sha256": "92ace56ca5745ab99ec8589ce9a1757e96b74c1b28f7d36258a79d183d2e9d23"
+    },
+    {
+      "path": "public/assets/gallery/gallery.css",
+      "bytes": 28728,
+      "sha256": "3dd28c5e1f7910e1f4a7d3fc88526958a4ed1987b0b6f620e9241b4556c61246"
+    },
+    {
+      "path": "public/assets/gallery/gallery.js",
+      "bytes": 21332,
+      "sha256": "e0e76c9e30f4ca8e424e9d644a0e8f00c9d368d2eecda310bc107eb8366bf4ee"
+    },
+    {
+      "path": "public/assets/intro-playback.js",
+      "bytes": 4244,
+      "sha256": "e42bbebdc139add71bf99fa331fdf8b5ce0f53077c023b0cf5aa4f79de187eb6"
+    },
+    {
+      "path": "public/assets/intro-poster.jpg",
+      "bytes": 118834,
+      "sha256": "adbb7534c7c9a5a1df0ad667d99664ce8d90983a180dd0b5c6848bc532eda0be"
+    },
+    {
+      "path": "public/assets/journey-poster.jpg",
+      "bytes": 122346,
+      "sha256": "1f980db64d6e834fab1175eedbbdb725108baa3c24479c5268469b248f449725"
+    },
+    {
+      "path": "public/assets/journey-transition-e549e8b13516.mp4",
+      "bytes": 2662182,
+      "sha256": "e549e8b13516710783669254cc9145aab048c09ba1fc093b80a6f89a2dd2a425"
+    },
+    {
+      "path": "public/assets/kinetic-caption.css",
+      "bytes": 5066,
+      "sha256": "a2333c44a0f16f2e7996ec1881e7ceb85759a2a28f2ea2543a5b83b0089c1e1e"
+    },
+    {
+      "path": "public/assets/kinetic-caption.js",
+      "bytes": 1833,
+      "sha256": "239d60cfaefa6bcdd7bdd0deea2e9254fff2f46adc5766734588d221c2496d28"
+    },
+    {
+      "path": "public/assets/landing-unified-v3.png",
+      "bytes": 2650249,
+      "sha256": "4f53e4e8aabecc2c4b27e37d25bd2a17abbccc1c2017c73086d9e4dd74a204b6"
+    },
+    {
+      "path": "public/assets/library/AI-README.md",
+      "bytes": 2179,
+      "sha256": "3e84c534f2affe18deb389c9959f1cfa6a3d19395b2da4e228a3a1298adc2989"
+    },
+    {
+      "path": "public/assets/library/AINARIUM-live-orb.html",
+      "bytes": 2887,
+      "sha256": "162509be0073eee4bffcc0acf3ca5a379e2652b39f8c720eb623df1bbf8a2fe7"
+    },
+    {
+      "path": "public/assets/library/AINARIUM-neon-card.html",
+      "bytes": 2622,
+      "sha256": "2c5483e35ac89aa553761e89051ba56bef03015dd2eb21d5bf7ce7291b453da5"
+    },
+    {
+      "path": "public/assets/library/AINARIUM-space-sky.html",
+      "bytes": 2334,
+      "sha256": "6afd10e0555d6a1a0fd9ade57a44f4ab56591b1a818bbc6ab85bf6686b1e407d"
+    },
+    {
+      "path": "public/assets/library/library.css",
+      "bytes": 7152,
+      "sha256": "e44a7bd7f49b4e9e1594d8926e3325cd5464511543e7217339f840a415ca35be"
+    },
+    {
+      "path": "public/assets/mobile-view.css",
+      "bytes": 8148,
+      "sha256": "1861178e0b803c614389057e0a177efdfe0e2d485398aea8873ef85852c8122a"
+    },
+    {
+      "path": "public/assets/mobile-view.js",
+      "bytes": 16144,
+      "sha256": "8333929d7dab5afce73d2f5f6911dd566163db2b986be293c015fdec4f746db1"
+    },
+    {
+      "path": "public/assets/showroom.css",
+      "bytes": 16816,
+      "sha256": "104c835eeafc4364f9ca01445c0c2fb26dad746a9556a857aa1cdd46fd42b780"
+    },
+    {
+      "path": "public/authors.html",
+      "bytes": 21909,
+      "sha256": "96482e825f25a39cdd0614d1008ca9d4d4deeee90c96f5287e882863293a3c16"
+    },
+    {
+      "path": "public/bg-desktop.png",
+      "bytes": 3608322,
+      "sha256": "d5f617ed1da3c7a49b538ad1e441a3004b643025ca53dafb68e0cc5e72b22296"
+    },
+    {
+      "path": "public/bg-mobile.png",
+      "bytes": 3551817,
+      "sha256": "d347017d2c830d305b57fd32007c1d63736c82bc3f27c22a761ce2a72908fc86"
+    },
+    {
+      "path": "public/bg.png",
+      "bytes": 4112356,
+      "sha256": "704878d0a08ab46444da3d4bb40f864b0e48f7ee454b17000ee3039034e82331"
+    },
+    {
+      "path": "public/examples/git-kindergarden/css/styles.css",
+      "bytes": 53939,
+      "sha256": "56d3f07db2bf37581632dc7fc7d6e7d0ba810fa578def9d4e947cef5707e1657"
+    },
+    {
+      "path": "public/examples/git-kindergarden/index.html",
+      "bytes": 13617,
+      "sha256": "8bb8105b7f834a7cd0ae9daa6180dc44241084d80ecbcceba4c7bf43a8934bac"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/app.js",
+      "bytes": 2463,
+      "sha256": "facaf99369054bc54eee4b9a8fe1d7c4dc70b13d81055ef7a11133377ee7a36d"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/failures.js",
+      "bytes": 19791,
+      "sha256": "805d8202993e33c55b20ea3c7c24b04f3be718ffba3eda3e68091459b14e1127"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/git-engine.js",
+      "bytes": 13214,
+      "sha256": "69645a56aa524049450eb76be30029b2a90f684442642d3e0493ca4231756abd"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/quiz.js",
+      "bytes": 12122,
+      "sha256": "76f21f348ca412a013baa9a05d69412655d9a4720955fd076759e69f9c2418f7"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/sandbox.js",
+      "bytes": 6204,
+      "sha256": "c55240b674a41cb4b62fe51dc437c799a407dabc6bf574878b2809eb529edf31"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/state.js",
+      "bytes": 2504,
+      "sha256": "5902e1a74bde1777f40c4f8c647250313700680494f102a5c379b96afa4e7d13"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/tutorial.js",
+      "bytes": 84302,
+      "sha256": "fe303815c95c906350370e8f42a45a51aefd2c22eafaad3c8d4d4349cb8ffb98"
+    },
+    {
+      "path": "public/examples/git-kindergarden/js/visualizer.js",
+      "bytes": 40349,
+      "sha256": "d83a1437168a9bc09f61c035d5317adf06208661af6f1f4b40a7227bce94189f"
+    },
+    {
+      "path": "public/gallery-draft.html",
+      "bytes": 22309,
+      "sha256": "33501651a97bb7498e1b7e941337375fc0184dd6fc5199d197604d40acb74995"
+    },
+    {
+      "path": "public/gallery.html",
+      "bytes": 17164,
+      "sha256": "ab4c349d45c8b5a88b948f0124195ed9722a9dc570970a1baee4c3709afbd511"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 6419,
+      "sha256": "e7f81752fe9b963c3e91659a80caff41902444d33d90d433c6b437a1e919a454"
+    },
+    {
+      "path": "public/intro.mp4",
+      "bytes": 3884209,
+      "sha256": "5bf0885105c161b49980d03c716fecf90809f0b54f7d671335c087823e519559"
+    },
+    {
+      "path": "public/logo.png",
+      "bytes": 14676,
+      "sha256": "9921c2ebf3ae42626032e0fdf41bfb7021ce9163d4a8ca1c08b4a43d05f44e0b"
+    },
+    {
+      "path": "public/vibecoding-concept.png",
+      "bytes": 1842362,
+      "sha256": "53ad73aba45bee4ff6090b92888cb8bd1fece9aeaf4d39728598af1ff9f3b554"
+    }
+  ]
+}

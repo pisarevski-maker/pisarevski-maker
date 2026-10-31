@@ -1,0 +1,7 @@
+/* Keep desktop navigation visible; the lesson content scrolls independently. */
+body.unified-course:not(.mobile-browse){display:grid;grid-template-rows:auto minmax(0,1fr);height:100dvh;min-height:0;overflow:hidden}
+body.unified-course:not(.mobile-browse) .course-workspace{height:100%;min-height:0;overflow:hidden}
+body.unified-course:not(.mobile-browse) .stage,body.unified-course.cover-clean:not(.mobile-browse) .stage{flex:1 1 0;min-height:0!important;overflow:auto!important;overscroll-behavior:contain;scroll-padding-bottom:180px}
+body.unified-course:not(.mobile-browse) .stage::after{content:'';display:block;height:180px;pointer-events:none}
+body.unified-course:not(.mobile-browse) .nav{flex:none;margin-top:0}
+body.unified-course:not(.mobile-browse) .course-guide.ainaya-on-demand{bottom:112px}

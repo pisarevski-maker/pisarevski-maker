@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AINARIUM — Vibecoding</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%}
+body{background:#061535;color:#d4e8ff;font-family:'Segoe UI',system-ui,sans-serif}
+.page{position:relative;width:100%;height:100svh;min-height:360px;overflow:hidden}
+/* One painted scene contains the sky, emblem, title, subtitle and button. */
+.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.video-wrap{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);width:min(44vw,calc(41svh * 16 / 9));aspect-ratio:16/9}
+.video-wrap video{display:block;width:100%;height:100%;object-fit:contain;border:1px solid #37cfff88;border-radius:16px;background:#020408;box-shadow:0 0 28px #0d91c43b}
+/* The transparent link follows the painted capsule in scene coordinates. */
+.btn-start{position:absolute;left:32.9%;top:82%;width:34.2%;height:12.4%;border-radius:999px;text-decoration:none}
+.btn-start:focus-visible{outline:3px solid #e4ffff;outline-offset:5px}
+.btn-start:active{background:#d4ffff16}
+@media(hover:hover){.btn-start:hover{box-shadow:0 0 28px #32eaff66}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.mob-card{display:none}
+@media(max-width:800px),(max-aspect-ratio:1/1),(pointer:coarse) and (max-width:1024px){
+  .page{min-height:440px}
+  .video-wrap{top:45%;width:min(92vw,calc(37svh * 16 / 9))}
+  .btn-start{display:none}
+  .mob-card{position:absolute;top:65%;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;width:min(90%,480px);padding:18px 20px;border-radius:20px;border:1px solid #37e6ff66;background:#081024b3;backdrop-filter:blur(8px);text-align:center;color:#d0e4ff}
+  .mob-card .ico{font-size:30px}
+  .mob-card b{display:block;font-size:18px;color:#75eeff;letter-spacing:1px}
+  .mob-card p{font-size:15px;line-height:1.35;font-weight:600}
+}
+
+.video-wrap::before{content:'';position:absolute;inset:-7px;border:1px solid #abf4ff;border-radius:23px;box-shadow:0 0 0 3px #0bbcff17,0 0 25px #10cfff66,inset 0 0 20px #25cfff24;pointer-events:none}
+.video-wrap::after{content:'';position:absolute;inset:-12px;border:1px solid #5fdbff66;border-radius:28px;clip-path:polygon(0 0,23% 0,23% 2%,77% 2%,77% 0,100% 0,100% 100%,77% 100%,77% 98%,23% 98%,23% 100%,0 100%);pointer-events:none}
+.landing-guide{position:absolute;left:5%;bottom:3%;height:24%;width:auto;max-width:17%;object-fit:contain;filter:drop-shadow(0 0 14px #38d9ff77);pointer-events:none}
+@media(max-width:800px),(max-aspect-ratio:1/1),(pointer:coarse) and (max-width:1024px){.landing-guide{height:15%;bottom:2%;left:auto;right:4%}}
+
+/* The poster fades over the last frame without reloading the movie. */
+.intro-cover{z-index:1;position:absolute;inset:0;display:grid;place-items:center;border-radius:16px;overflow:hidden;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s ease,visibility 0s linear .8s}
+.intro-cover.is-visible{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .8s ease}
+.intro-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#020408}
+.intro-replay{position:relative;display:grid;place-items:center;width:72px;height:72px;border:1px solid #b5faff;border-radius:50%;background:#08324cdb;color:white;box-shadow:0 0 26px #32dfff66;cursor:pointer}
+.intro-replay svg{width:27px;height:27px;margin-left:5px;fill:currentColor}
+.intro-replay:focus-visible{outline:3px solid white;outline-offset:5px}
+.intro-shade{position:absolute;inset:0;z-index:2;border-radius:16px;background:#020408;opacity:0;pointer-events:none}
+.video-wrap.is-returning .intro-cover{transition:none}
+.video-wrap.is-returning .intro-shade{transition:opacity .8s ease}
+.mobile-explore{display:flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border:1px solid #9bf2ff;border-radius:12px;background:#126497;color:#f2fcff;font-size:18px;font-weight:650;text-decoration:none}
+.mobile-explore:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.intro-cover,.intro-cover.is-visible,.video-wrap.is-returning .intro-shade{transition:none}}
+</style>
+</head>
+<body>
+<main class="page">
+  <picture>
+    <source media="(max-width:800px), (max-aspect-ratio:1/1), (pointer:coarse) and (max-width:1024px)" srcset="bg-mobile.png">
+    <img class="scene" src="assets/landing-unified-v3.png" alt="" fetchpriority="high">
+  </picture>
+  <h1 class="sr-only">AINARIUM — VIBECODING</h1>
+  <p class="sr-only">Створюй сайти, ігри та застосунки за допомогою AI.</p>
+  <div class="video-wrap">
+    <video id="introVideo" tabindex="0" controls preload="metadata" playsinline poster="assets/intro-poster.jpg" aria-label="Вступне відео AINARIUM">
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+    <div id="introCover" class="intro-cover" aria-hidden="true">
+      <img src="assets/intro-poster.jpg" alt="">
+      <button id="introReplay" class="intro-replay" type="button" aria-label="Переглянути вступ ще раз" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l16-9z"/></svg></button>
+    </div>
+    <div id="introShade" class="intro-shade" aria-hidden="true"></div>
+    <p id="introPlaybackStatus" class="sr-only" role="status"></p>
+  </div>
+  <a class="btn-start" href="app.html" aria-label="Почати навчання"></a>
+  <div class="mob-card">
+    <span class="ico" aria-hidden="true">💻</span>
+    <b>НАДИХАЙСЯ НА ТЕЛЕФОНІ</b>
+    <p>Переглядай ідеї та приклади. Створювати власний сайт і працювати з prompts зручніше на комп’ютері.</p>
+    <a class="mobile-explore" href="app.html">Переглянути галерею ідей →</a>
+  </div>
+<img class="landing-guide" src="assets/ainaya-welcome.webp" alt="Айная запрошує у світ творчості">
+</main>
+<script src="assets/intro-playback.js?v=cinematic-v2-1" defer></script>
+</body>
+</html>

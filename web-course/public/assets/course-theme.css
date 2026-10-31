@@ -1,0 +1,301 @@
+/* Shared learning content. Shell, navigation, narrator and sky are owned by the app. */
+body.unified-course{
+  --course-heading:clamp(42px,3.2vw,60px);
+  --course-body:clamp(22px,1.3vw,26px);
+  --course-label:clamp(20px,1.16vw,23px);
+  --course-small:20px;
+  --course-ink:#f1f8ff;
+  --course-muted:#c7d9ed;
+  --course-cyan:#89edff;
+  --course-edge:#74d8fa69;
+  --course-panel:linear-gradient(145deg,#102d50eb,#071c38ed);
+  --course-shadow:0 16px 36px #00112535,inset 0 1px 0 #bcf2ff0d;
+}
+body.unified-course .stage>.slide.optimized-slide{
+  position:absolute;inset:0;padding:30px clamp(22px,2.1vw,40px) 36px;
+  overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;
+  align-items:stretch;justify-content:flex-start;background:transparent;
+  scrollbar-width:thin;scrollbar-color:#56b5cf #071a31;
+}
+body.unified-course .slide.optimized-slide>.inner{
+  position:relative!important;inset:auto!important;display:flex;flex-direction:column;
+  width:100%;max-width:1480px!important;min-height:0;height:auto!important;
+  margin:0 auto!important;gap:26px;align-items:stretch;flex:none;overflow:visible;
+  transform:none!important;transform-origin:top center!important;transition:none;will-change:auto;
+}
+body.unified-course .slide.optimized-slide :is(h1,h2){
+  font-family:var(--font);font-size:var(--course-heading);line-height:1.13;
+  letter-spacing:-.025em;font-weight:740;color:var(--course-ink);margin:0;
+  text-align:left;text-wrap:balance;text-shadow:0 0 25px #27bdff18;
+}
+body.unified-course .slide.optimized-slide :is(h3,h4){font-family:var(--font);font-weight:700;color:var(--course-ink);text-shadow:none;line-height:1.25}
+body.unified-course .slide.optimized-slide :is(.lead,.note,.big-step){
+  font-size:var(--course-body);line-height:1.5;color:var(--course-muted);
+  font-weight:500;max-width:none!important;width:auto;text-align:left;text-shadow:none;margin:0;
+}
+body.unified-course .slide.optimized-slide .hl{color:var(--course-cyan);text-shadow:none}
+body.unified-course .slide.optimized-slide>.inner>.kicker{display:none}
+body.unified-course .slide.optimized-slide :is(.card,.bubble,.step,.optimized-choice-panel,.guide-hero,.guide-rules,.tool-choice-card,.folder-connection-card,.prompt-window,.result-window){
+  background:var(--course-panel);border:1px solid var(--course-edge);border-radius:23px;
+  color:var(--course-ink);box-shadow:var(--course-shadow);backdrop-filter:blur(10px);
+}
+body.unified-course .slide.optimized-slide .card{padding:25px;min-width:0}
+body.unified-course .slide.optimized-slide .card h3{font-size:clamp(25px,1.5vw,30px);margin:0 0 10px}
+body.unified-course .slide.optimized-slide .card p{font-size:var(--course-body);line-height:1.5;font-weight:500;color:var(--course-muted)}
+body.unified-course .slide.optimized-slide .card .emoji{font-size:40px;line-height:1.2;margin-bottom:12px}
+body.unified-course .slide.optimized-slide .card:hover{transform:none;box-shadow:var(--course-shadow);border-color:#9ceeff8a}
+body.unified-course .slide.optimized-slide .card.tap:hover{transform:translateY(-2px);border-color:var(--course-cyan)}
+body.unified-course .slide.optimized-slide :is(.card.tap.picked,.style-card.sel,.tool-choice-card.selected){
+  background:linear-gradient(145deg,#155480e8,#0a3454ed);border-color:#90f4ff;
+  box-shadow:inset 0 0 0 1px #86eeff33,0 0 20px #20b9ff1f;outline:none;
+}
+body.unified-course .slide.optimized-slide .card.tap.picked::after{position:absolute;top:12px;right:12px;margin:0;transform:none;width:25px;height:25px;border:0;background:#88e8e0;color:#073043;font-size:18px}
+body.unified-course .slide.optimized-slide :is(.btn,.send-prompt,.copy-btn,.thought-add,.tool-choice-link,.folder-save-cta,.folder-path-editor button){
+  font-family:var(--font);font-size:var(--course-label);font-weight:700;line-height:1.25;
+  min-height:56px;padding:15px 22px;border:1px solid #8deaffb3;border-radius:14px;
+  background:linear-gradient(130deg,#117ebc,#1468b1);color:#f3fcff;
+  box-shadow:0 0 20px #19baff1a,inset 0 1px 0 #d2ffff2b;text-shadow:none;text-decoration:none;
+}
+body.unified-course .slide.optimized-slide :is(.btn,.send-prompt,.copy-btn,.thought-add,.tool-choice-link,.folder-save-cta,.folder-path-editor button):hover{filter:brightness(1.08);border-color:#d4fdff}
+body.unified-course .slide.optimized-slide :is(button,a,input,textarea,select,[tabindex]):focus-visible{outline:3px solid #b1f6ff;outline-offset:4px}
+body.unified-course .slide.optimized-slide input{font:500 var(--course-body)/1.3 var(--font);min-height:62px;padding:14px 18px;background:#041831e6;border:1px solid #82b8d77a;border-radius:14px;color:#fff}
+body.unified-course .slide.optimized-slide input::placeholder{color:#a9bfd6;opacity:1}
+body.unified-course .slide.optimized-slide .grid{width:100%;max-width:100%;gap:22px}
+
+/* The cover illustration is framed within the shared shell instead of cropping behind it. */
+body.unified-course .slide.optimized-slide.cover.cover-scene{padding:22px clamp(22px,2.1vw,40px) 30px;overflow-y:auto}
+body.unified-course .slide.optimized-slide.cover.cover-scene>.inner{gap:0;max-width:1480px!important;height:auto!important;min-height:0}
+body.unified-course .slide.optimized-slide.cover.cover-scene .cover-frame{
+  position:relative;inset:auto;width:100%;height:auto;max-width:none;aspect-ratio:16/9;
+  border:1px solid #9eeaff9c;border-radius:24px;box-shadow:0 0 0 4px #39b9f00a,0 0 26px #1abaff2b;background:#071b32;overflow:hidden;
+}
+body.unified-course .slide.optimized-slide.cover.cover-scene .cover-frame img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:inherit}
+
+/* Route screen. */
+body.unified-course .guide-slide .guide-map{padding:0;width:100%;display:grid;grid-template-columns:minmax(0,1.26fr) minmax(360px,.84fr);gap:24px;flex:none;align-items:stretch}
+body.unified-course .guide-slide .guide-hero{padding:28px;gap:24px;justify-content:flex-start;min-height:0}
+body.unified-course .guide-slide .guide-hero h2{font-size:clamp(40px,2.7vw,54px)}
+body.unified-course .guide-slide .guide-hero>p{font-size:var(--course-body);font-weight:500;line-height:1.5;color:var(--course-muted)}
+body.unified-course .guide-slide .guide-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:auto}
+body.unified-course .guide-slide .guide-step{min-width:0;padding:22px 18px;gap:14px;border:1px solid #71c8ee45;background:#13507825;border-radius:18px;box-shadow:none}
+body.unified-course .guide-slide .guide-step::after{display:none}
+body.unified-course .guide-slide .guide-step .emoji{font-size:43px}
+body.unified-course .guide-slide .guide-step h3{font-size:26px}
+body.unified-course .guide-slide .guide-step p{font-size:21px;line-height:1.45;font-weight:500;color:var(--course-muted)}
+body.unified-course .guide-slide .guide-rules{padding:28px;gap:18px}
+body.unified-course .guide-slide .guide-rules>h3{font-size:32px;margin-bottom:4px}
+body.unified-course .guide-slide .guide-rule{grid-template-columns:90px minmax(0,1fr);gap:16px;padding:17px 15px;min-height:0;flex:none;background:#17446c30;border:1px solid #71c8ee3b;border-radius:15px}
+body.unified-course .guide-slide .guide-key{font-size:20px;font-weight:650;border:1px solid #6dd3f655;box-shadow:none;padding:10px 7px;color:#b3f2ff;background:#177daf24;border-radius:9px}
+body.unified-course .guide-slide .guide-rule p{font-size:21px;font-weight:500;line-height:1.4;color:var(--course-muted)}
+body.unified-course .guide-slide .guide-next-call{font-size:22px;padding:15px 20px;color:#eafcff;background:#0e77ab;border:1px solid #8deaff9c;border-radius:14px;box-shadow:0 0 18px #1abaff1f;align-self:stretch;text-align:center}
+
+/* Interactive prompt demonstration; draggable objects keep their own transforms. */
+body.unified-course .thinking-slide .thinking-layout{display:grid;width:100%;padding:0;grid-template-columns:minmax(0,1fr) 220px;gap:24px;flex:none;min-height:0;align-items:stretch}
+body.unified-course .thinking-slide .video-frame{display:grid;width:100%;padding:0;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:22px;min-height:0;flex:none}
+body.unified-course .thinking-slide :is(.prompt-window,.result-window){height:auto;min-height:450px;padding:24px;border-radius:23px;overflow:visible;min-width:0}
+body.unified-course .thinking-slide .prompt-window{display:flex;flex-direction:column;gap:16px}
+body.unified-course .thinking-slide .prompt-title{font-size:23px;font-weight:650;margin:0;color:var(--course-cyan)}
+body.unified-course .thinking-slide .prompt-text{font:500 21px/1.5 ui-monospace,Consolas,monospace;min-height:260px;max-height:460px;overflow:auto;flex:1 1 auto;padding:18px;background:#04162dba;border:1px solid #79c7ed42;border-radius:15px;color:#e0edf9}
+body.unified-course .thinking-slide .send-prompt{margin:0;flex:none;white-space:normal}
+body.unified-course .thinking-slide .result-window{display:flex;align-items:stretch;justify-content:stretch}
+body.unified-course .thinking-slide .wire-page{width:100%;height:auto;min-height:0;padding:0;gap:15px;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:visible;background:transparent;color:var(--course-ink);box-shadow:none;border-radius:0}
+body.unified-course .thinking-slide .wire-head{height:auto;min-height:58px;padding:14px 16px;font-size:23px;line-height:1.3;background:#13527f52;color:#e1f6ff;border:1px solid #74d8fa45;border-radius:13px}
+body.unified-course .thinking-slide .wire-note{padding:16px;font-size:20px;font-weight:500;line-height:1.4;background:#13476438;color:var(--course-muted);border:1px solid #79c7ed38;border-radius:13px;box-shadow:none}
+body.unified-course .thinking-slide .wire-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;min-height:0}
+body.unified-course .thinking-slide .folder-list{display:grid;grid-template-rows:repeat(6,auto);align-content:start;gap:10px;min-width:0;min-height:0}
+body.unified-course .thinking-slide .folder-item{font-size:20px;font-weight:550;line-height:1.35;white-space:normal;gap:10px;min-height:65px;padding:12px;background:#0b2a46b3;border:1px solid #82c5ed4d;border-radius:12px;color:#e0eefb;overflow-wrap:anywhere}
+body.unified-course .thinking-slide .folder-item .folder-ico{font-size:23px;flex:none}
+body.unified-course .thinking-slide .wire-grid{grid-template-columns:1fr;grid-template-rows:repeat(6,auto);gap:10px;align-content:start}
+body.unified-course .thinking-slide .wire-box{min-height:65px;padding:14px;font-size:20px;font-weight:550;line-height:1.35;background:#0c2f4f8f;border:1px dashed #7dc9ee8f;border-radius:12px;color:#e0eefb;overflow-wrap:anywhere}
+body.unified-course .thinking-slide .side-thought:not(.user-moved){width:100%;height:auto;min-height:0;justify-self:stretch;align-self:stretch;padding:24px 18px;border-radius:23px;gap:16px}
+body.unified-course .thinking-slide .side-thought{background:linear-gradient(160deg,#155477e8,#102c53ef);border:1px solid #7de9ff8a;color:#e9faff!important;box-shadow:0 0 22px #12baff20,inset 0 1px 0 #bdf6ff15;text-shadow:none}
+body.unified-course .thinking-slide .side-thought .bulb{font-size:48px}
+body.unified-course .thinking-slide .side-thought .tagline{font-size:22px;letter-spacing:.05em;color:#c9efff}
+body.unified-course .thinking-slide .side-thought .word{font-size:31px;color:#e9faff}
+body.unified-course .thinking-slide .side-thought .arr{font-size:29px;color:#8be9ff}
+body.unified-course .thinking-slide .thought-add{width:auto;height:auto;font-size:21px;padding:14px 18px;white-space:normal}
+body.unified-course .thinking-slide .video-controls{display:flex;width:100%;height:auto;opacity:1;gap:14px}
+body.unified-course .thinking-slide .video-controls .video-pause{display:grid;width:48px;height:48px;font-size:20px;border-radius:13px;flex:none}
+body.unified-course .thinking-slide .video-scrub{height:16px;border-color:#81cfe869;background:#08213cb3}
+body.unified-course .thinking-slide .video-caption{font-size:21px;line-height:1.4;max-width:none;width:100%;padding:0;color:var(--course-muted);font-weight:500}
+
+/* Readable style and topic selection. */
+body.unified-course .optimized-choice-slide .optimized-choice-layout{width:100%;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px;align-items:stretch}
+body.unified-course .optimized-choice-slide .optimized-choice-panel{padding:28px;min-width:0}
+body.unified-course .optimized-choice-slide .optimized-choice-panel>h3{font-size:30px;line-height:1.3;margin:24px 0 18px}
+body.unified-course .optimized-choice-slide .optimized-choice-panel>h3:first-child{margin-top:0}
+body.unified-course .optimized-choice-slide .name-card{display:flex;flex-direction:column;align-items:stretch;gap:12px;width:100%;padding:0;margin:0 0 26px;border:0;border-radius:0;background:transparent;box-shadow:none}
+body.unified-course .optimized-choice-slide .name-card label{font-size:var(--course-label);font-weight:650;color:#e4f6ff;text-shadow:none}
+body.unified-course .optimized-choice-slide .name-card input{width:100%;min-width:0;font-weight:500;font-size:25px}
+body.unified-course .optimized-choice-slide .style-grid{width:100%;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+body.unified-course .optimized-choice-slide .style-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0;min-height:128px;padding:16px 8px;border:1px solid #80bcdd5c;background:#092442b3;border-radius:17px;box-shadow:none}
+body.unified-course .optimized-choice-slide .style-card .logo{width:52px;height:50px;margin:0;border:1px solid #94d7ec52;border-radius:12px;font-size:32px;background:linear-gradient(145deg,#84baff26,#28cbef0d)}
+body.unified-course .optimized-choice-slide .style-card h4{font-size:21px;font-weight:600;line-height:1.25;margin:0;overflow-wrap:anywhere}
+body.unified-course .optimized-choice-slide .optimized-theme-grid{width:100%!important;max-width:none!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+body.unified-course .optimized-choice-slide .optimized-theme-grid .card{display:flex;align-items:center;justify-content:flex-start;gap:15px;min-height:98px;padding:20px 18px;border-radius:17px;background:#092442b3;box-shadow:none;text-align:left}
+body.unified-course .optimized-choice-slide .optimized-theme-grid .emoji{flex:none;font-size:35px;line-height:1.15;margin:0}
+body.unified-course .optimized-choice-slide .optimized-theme-grid h3{font-size:var(--course-label);font-weight:650;line-height:1.25;margin:0}
+body.unified-course .optimized-choice-slide .note{font-size:22px}
+
+/* Profile and first success use a single generous focal area. */
+body.unified-course .slide.optimized-slide:has(#profileCard),
+body.unified-course .slide.optimized-slide:has(>.inner>.trophy){justify-content:center}
+body.unified-course .slide.optimized-slide:has(#profileCard)>.inner,
+body.unified-course .slide.optimized-slide:has(>.inner>.trophy)>.inner{max-width:1200px!important;gap:30px;align-items:center}
+body.unified-course .slide.optimized-slide:has(#profileCard) h2,
+body.unified-course .slide.optimized-slide:has(>.inner>.trophy) h1{text-align:center}
+body.unified-course #profileCard{width:100%;max-width:1120px!important;padding:36px 40px}
+body.unified-course #profileText{font-size:clamp(24px,1.5vw,29px);line-height:1.8!important;font-weight:500!important;color:#e5f0fc;overflow-wrap:anywhere}
+body.unified-course #profileText b{font-weight:700;color:#a6efff}
+body.unified-course .slide.optimized-slide .trophy{font-size:90px;line-height:1.2}
+body.unified-course .slide.optimized-slide .bubble{max-width:1120px!important;padding:28px 34px;font-family:var(--font);font-size:var(--course-body);line-height:1.55;text-align:left}
+body.unified-course .slide.optimized-slide .bubble::before,
+body.unified-course .slide.optimized-slide .bubble::after{display:none}
+
+/* Folder component hooks remain stable for the new optional library workflow. */
+body.unified-course .layout-folder-save .folder-manager.legacy{width:100%;max-width:none;gap:24px}
+body.unified-course .layout-folder-save .steps{width:100%!important;max-width:none!important;grid-template-columns:1fr!important;gap:16px!important}
+body.unified-course .layout-folder-save .step{min-height:90px;padding:23px 26px;border-radius:20px}
+body.unified-course .layout-folder-save .step .t{font-size:var(--course-body);line-height:1.45;padding:0}
+body.unified-course .layout-folder-save .step .n{width:42px;height:42px;border-radius:12px;font-size:24px;color:#e5faff;background:#166997;border:1px solid #89e5ff69;box-shadow:none}
+body.unified-course .layout-folder-save .folder-connection-card{width:100%;padding:26px;gap:14px 20px}
+body.unified-course .layout-folder-save .folder-connection-title{font-size:26px;font-weight:700}
+body.unified-course .layout-folder-save .folder-connected-path{font-size:21px;line-height:1.5;font-weight:500;color:#a5eaff}
+body.unified-course .layout-folder-save .folder-path-hint{font-size:20px;font-weight:500;line-height:1.45;color:var(--course-muted)}
+body.unified-course .layout-folder-save .folder-path-editor{gap:15px}
+body.unified-course .layout-folder-save .folder-path-editor input{font-size:22px;min-height:60px}
+body.unified-course .layout-folder-save .folder-status{width:100%!important;min-height:90px;padding:23px 26px;background:#0c3256df;border:1px solid #8ac2e46e;border-radius:20px;box-shadow:var(--course-shadow);font-size:var(--course-label);font-weight:600;line-height:1.4;color:#e6f4ff;gap:24px}
+body.unified-course .layout-folder-save .folder-status.mounted{background:#0c3b5bdf;border-color:#83d9f29c;box-shadow:var(--course-shadow)}
+body.unified-course .layout-folder-save .folder-status.mounted::after{font-size:20px;color:var(--course-muted)}
+body.unified-course .layout-folder-save .folder-status.saving{background:#294453e8;color:#eaf8ff;border-color:#d2d9979c;box-shadow:var(--course-shadow)}
+body.unified-course .layout-folder-save .folder-status.saved{background:#0e4a4bdb;border-color:#98edcb9c;color:#e0fff2;box-shadow:var(--course-shadow)}
+body.unified-course .layout-folder-save .folder-save-cta{border-radius:14px;font-size:22px;font-weight:700}
+body.unified-course .layout-folder-save .folder-save-cta:disabled{opacity:.48}
+
+/* AI assistant selection. */
+body.unified-course .layout-tool-choice .tool-choice-grid{width:100%;max-width:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:stretch}
+body.unified-course .layout-tool-choice .tool-choice-card{min-height:360px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:34px;gap:16px}
+body.unified-course .layout-tool-choice .tool-choice-card:hover{transform:translateY(-2px);box-shadow:var(--course-shadow)}
+body.unified-course .layout-tool-choice .tool-choice-icon{font-size:48px;line-height:1.2;margin:0}
+body.unified-course .layout-tool-choice .tool-choice-card h3{font-size:38px;margin:0}
+body.unified-course .layout-tool-choice .tool-choice-card p{font-size:var(--course-body);line-height:1.5;font-weight:500;color:var(--course-muted);max-width:540px}
+body.unified-course .layout-tool-choice .tool-choice-link{font-size:22px;margin-top:auto;display:inline-flex;align-items:center;justify-content:center}
+body.unified-course .layout-tool-choice .tool-choice-selected{font-size:24px;line-height:1.4;min-height:0;color:#a7f3df;font-weight:600;text-align:left}
+
+/* A real prompt editor: controls in flow, long content in its own readable scroller. */
+body.unified-course .layout-big-prompt .prompt-box{
+  display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:18px;
+  width:100%!important;max-width:none!important;max-height:none!important;padding:24px;
+  overflow:visible;font-size:22px!important;line-height:1.55;white-space:normal;border:1px solid var(--course-edge);
+  background:var(--course-panel);border-radius:23px;box-shadow:var(--course-shadow);
+}
+body.unified-course .layout-big-prompt .ph-title{position:static;inset:auto;grid-column:1;grid-row:1;font-size:20px;line-height:1.4;font-weight:650;color:#a0efff;font-family:var(--font)}
+body.unified-course .layout-big-prompt .copy-btn{position:static;inset:auto;grid-row:1;grid-column:2;font-size:21px;margin:0}
+body.unified-course .layout-big-prompt .copy-btn.transfer-codex{grid-column:3;font-size:21px}
+body.unified-course .layout-big-prompt #promptText{display:block;grid-column:1/-1;white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto;max-height:420px;min-height:260px;padding:22px;border:1px solid #83c7e442;border-radius:14px;background:#04162cba;font:500 22px/1.6 ui-monospace,Consolas,monospace;color:#e4effb;scrollbar-width:thin;scrollbar-color:#56b5cf #071a31}
+body.unified-course .layout-big-prompt .grid.g2.mini{width:100%!important;max-width:none!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+body.unified-course .layout-big-prompt .grid.g2.mini .card{padding:24px;background:var(--course-panel);border:1px solid var(--course-edge);border-radius:20px;box-shadow:var(--course-shadow)}
+body.unified-course .layout-big-prompt .grid.g2.mini .card .emoji{font-size:33px;margin-bottom:10px}
+body.unified-course .layout-big-prompt .grid.g2.mini .card h3{font-size:26px}
+body.unified-course .layout-big-prompt .grid.g2.mini .card p{font-size:22px;line-height:1.5;font-weight:500}
+
+/* Final challenge keeps the three original prompt actions and help accordion. */
+body.unified-course .layout-final-challenge{justify-content:center}
+body.unified-course .layout-final-challenge>.inner{max-width:1380px!important;gap:28px}
+body.unified-course .layout-final-challenge h1{font-size:clamp(44px,3.2vw,60px);line-height:1.16;max-width:1300px}
+body.unified-course .layout-final-challenge .challenge-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:none;gap:22px}
+body.unified-course .layout-final-challenge .challenge-row .btn{display:flex;align-items:center;justify-content:flex-start;gap:15px;min-height:110px;padding:25px!important;font-size:25px!important;line-height:1.35;border:1px solid #8deaff8f;border-radius:20px;background:var(--course-panel)!important;box-shadow:var(--course-shadow);text-align:left}
+body.unified-course .layout-final-challenge>.inner>.btn{align-self:flex-start;font-size:22px!important;padding:16px 24px!important}
+body.unified-course .layout-final-challenge .trouble{max-width:100%!important;margin-top:0!important;gap:15px}
+body.unified-course .layout-final-challenge .trouble details{padding:2px 20px;border:1px solid #82c7e452;border-radius:16px;background:#0c2b48cb;box-shadow:none}
+body.unified-course .layout-final-challenge .trouble summary{font:600 22px/1.4 var(--font);padding:16px 0;justify-content:flex-start!important;color:#daf2ff}
+body.unified-course .layout-final-challenge .trouble p{font:500 22px/1.5 var(--font);padding:0 0 20px 26px;color:var(--course-muted)}
+
+/* Reflow dense screens. Type remains readable and the slide itself can scroll. */
+@media(max-width:1500px){
+  body.unified-course .thinking-slide .thinking-layout{grid-template-columns:minmax(0,1fr)}
+  body.unified-course .thinking-slide .side-thought:not(.user-moved){flex-direction:row;flex-wrap:wrap;justify-content:center;width:100%;padding:22px;gap:18px}
+  body.unified-course .thinking-slide .side-thought .arr{transform:none}
+  body.unified-course .thinking-slide .side-thought .bulb{font-size:40px}
+  body.unified-course .thinking-slide .side-thought .tagline{font-size:20px}
+  body.unified-course .thinking-slide .side-thought .word{font-size:27px}
+  body.unified-course .thinking-slide .side-thought .thought-add{margin-left:auto}
+  body.unified-course .guide-slide .guide-map{grid-template-columns:minmax(0,1.1fr) minmax(330px,.9fr)}
+  body.unified-course .guide-slide .guide-route{grid-template-columns:1fr}
+  body.unified-course .guide-slide .guide-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:7px 14px;padding:18px}
+  body.unified-course .guide-slide .guide-step .emoji{grid-row:1/3}
+  body.unified-course .guide-slide .guide-step p{grid-column:2}
+  body.unified-course .optimized-choice-slide .optimized-choice-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  body.unified-course .optimized-choice-slide .style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid .card{flex-direction:column;align-items:flex-start;gap:12px;min-height:135px}
+}
+@media(max-width:1180px){
+  body.unified-course .stage>.slide.optimized-slide{padding:26px 24px 30px}
+  body.unified-course .slide.optimized-slide>.inner{gap:24px}
+  body.unified-course .guide-slide .guide-map{grid-template-columns:1fr}
+  body.unified-course .guide-slide .guide-route{grid-template-columns:repeat(3,minmax(0,1fr))}
+  body.unified-course .guide-slide .guide-step{display:flex;gap:12px}
+  body.unified-course .guide-slide .guide-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.unified-course .guide-slide .guide-rules>h3,body.unified-course .guide-slide .guide-next-call{grid-column:1/-1}
+  body.unified-course .guide-slide .guide-rule{grid-template-columns:1fr;align-content:start;gap:12px}
+  body.unified-course .guide-slide .guide-key{justify-self:start;min-width:90px}
+  body.unified-course .thinking-slide .wire-body{grid-template-columns:1fr}
+  body.unified-course .thinking-slide .wire-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  body.unified-course .thinking-slide .folder-list{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  body.unified-course .optimized-choice-slide .optimized-choice-panel{padding:23px}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid .card{padding:18px 14px}
+  body.unified-course .layout-big-prompt .prompt-box{grid-template-columns:minmax(0,1fr) auto}
+  body.unified-course .layout-big-prompt .ph-title{grid-column:1/-1}
+  body.unified-course .layout-big-prompt .copy-btn{grid-column:1;grid-row:2;justify-self:start}
+  body.unified-course .layout-big-prompt .copy-btn.transfer-codex{grid-column:2;grid-row:2}
+  body.unified-course .layout-final-challenge .challenge-row{grid-template-columns:1fr}
+  body.unified-course .layout-final-challenge .challenge-row .btn{min-height:85px}
+}
+@media(max-width:900px){
+  body.unified-course{--course-heading:40px;--course-body:22px;--course-label:21px}
+  body.unified-course .optimized-choice-slide .optimized-choice-layout{grid-template-columns:1fr}
+  body.unified-course .optimized-choice-slide .style-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid .card{flex-direction:row;align-items:center;min-height:98px}
+  body.unified-course .thinking-slide .video-frame{grid-template-columns:1fr}
+  body.unified-course .thinking-slide .side-thought .thought-add{margin-left:0}
+  body.unified-course .guide-slide .guide-route{grid-template-columns:1fr}
+  body.unified-course .guide-slide .guide-step{display:grid;grid-template-columns:48px minmax(0,1fr)}
+  body.unified-course .guide-slide .guide-rules{display:flex}
+  body.unified-course .guide-slide .guide-rule{grid-template-columns:90px minmax(0,1fr)}
+  body.unified-course .layout-tool-choice .tool-choice-grid{grid-template-columns:1fr}
+  body.unified-course .layout-tool-choice .tool-choice-card{min-height:0;padding:28px}
+  body.unified-course .layout-tool-choice .tool-choice-link{margin-top:8px}
+  body.unified-course .layout-big-prompt .grid.g2.mini{grid-template-columns:1fr}
+  body.unified-course .layout-folder-save .folder-path-editor{grid-template-columns:1fr}
+  body.unified-course .layout-folder-save .folder-status{flex-direction:column;align-items:stretch;text-align:left}
+  body.unified-course #profileCard{padding:28px}
+}
+@media(max-width:600px){
+  body.unified-course{--course-heading:34px;--course-body:21px;--course-label:20px}
+  body.unified-course .stage>.slide.optimized-slide{padding:22px 16px 26px}
+  body.unified-course .slide.optimized-slide.cover.cover-scene{padding:16px}
+  body.unified-course .slide.optimized-slide>.inner{gap:23px}
+  body.unified-course .slide.optimized-slide :is(h1,h2){font-size:34px}
+  body.unified-course .guide-slide .guide-hero h2{font-size:34px}
+  body.unified-course .guide-slide :is(.guide-hero,.guide-rules){padding:22px}
+  body.unified-course .guide-slide .guide-rule{grid-template-columns:1fr}
+  body.unified-course .optimized-choice-slide .optimized-choice-panel{padding:20px}
+  body.unified-course .optimized-choice-slide .style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid{gap:12px!important}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid .card{flex-direction:column;align-items:flex-start;min-height:130px}
+  body.unified-course .optimized-choice-slide .optimized-theme-grid h3{font-size:20px}
+  body.unified-course .optimized-choice-slide .name-card input{font-size:22px}
+  body.unified-course .thinking-slide :is(.prompt-window,.result-window){padding:20px;min-height:0}
+  body.unified-course .thinking-slide .folder-list,body.unified-course .thinking-slide .wire-grid{grid-template-columns:1fr}
+  body.unified-course .thinking-slide .side-thought .tagline{width:100%;text-align:center}
+  body.unified-course .thinking-slide .side-thought .word{font-size:23px}
+  body.unified-course .thinking-slide .side-thought .arr{font-size:23px}
+  body.unified-course .thinking-slide .side-thought .thought-add{width:100%}
+  body.unified-course .layout-big-prompt .prompt-box{padding:18px;grid-template-columns:1fr}
+  body.unified-course .layout-big-prompt .copy-btn,body.unified-course .layout-big-prompt .copy-btn.transfer-codex{grid-column:1;grid-row:auto;width:100%;justify-self:stretch}
+  body.unified-course .layout-big-prompt #promptText{font-size:20px;line-height:1.55;padding:17px;max-height:460px}
+  body.unified-course .slide.optimized-slide .bubble{padding:24px;font-size:22px}
+  body.unified-course .layout-final-challenge h1{font-size:36px}
+  body.unified-course .layout-final-challenge .challenge-row .btn{font-size:22px!important;padding:22px!important}
+  body.unified-course .layout-final-challenge .trouble summary{font-size:21px}
+}

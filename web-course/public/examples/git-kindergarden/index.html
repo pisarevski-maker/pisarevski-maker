@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Kindergarden — Від коду до деплою</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="app-logo">
+      <svg viewBox="0 0 32 32" width="28" height="28">
+        <circle cx="16" cy="16" r="14" fill="#f05033"/>
+        <path d="M16 6v20M8 16h16M10 10l12 12M22 10L10 22" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+        <circle cx="16" cy="10" r="3" fill="#fff"/>
+        <circle cx="16" cy="22" r="3" fill="#fff"/>
+        <circle cx="10" cy="16" r="2.5" fill="#fff"/>
+        <circle cx="22" cy="16" r="2.5" fill="#fff"/>
+      </svg>
+      <span>Git Kindergarden</span>
+    </div>
+
+    <nav class="app-nav">
+      <button class="nav-btn active" data-mode="tutorial">📖 Туторіал</button>
+      <button class="nav-btn" data-mode="sandbox">🎮 Пісочниця</button>
+      <button class="nav-btn" data-mode="failures">🔥 Помилки</button>
+      <button class="nav-btn" data-mode="quiz">📝 Тест</button>
+    </nav>
+
+    <div class="util-btns">
+      <a class="util-btn util-link" href="../../app.html#showroom">↩ До шоуруму</a>
+      <button class="util-btn" onclick="toggleGlossary()">📚 Глосарій</button>
+      <button class="util-btn" onclick="toggleCheatsheet()">⌨️ Команди</button>
+    </div>
+  </header>
+
+  <!-- Pipeline Bar -->
+  <div id="pipeline-bar"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Tutorial Mode -->
+    <div id="tutorial-content" class="mode-content"></div>
+
+    <!-- Sandbox Mode -->
+    <div id="sandbox-content" class="mode-content hidden"></div>
+
+    <!-- Failures Mode -->
+    <div id="failures-content" class="mode-content hidden"></div>
+
+    <!-- Quiz Mode -->
+    <div id="quiz-content" class="mode-content hidden"></div>
+
+  </main>
+
+</div>
+
+<!-- Glossary Panel -->
+<div id="glossary-panel" class="slide-panel">
+  <button class="panel-close" onclick="toggleGlossary()">&times;</button>
+  <h2>📚 Глосарій Git</h2>
+
+  <div class="glossary-item"><div class="glossary-term">repository (repo)</div><div class="glossary-def">Сховище вашого проєкту — весь код + вся історія змін.</div></div>
+  <div class="glossary-item"><div class="glossary-term">commit</div><div class="glossary-def">Збереження "знімку" коду. Як зберегти гру — можна повернутися до цього моменту.</div></div>
+  <div class="glossary-item"><div class="glossary-term">branch (гілка)</div><div class="glossary-def">Паралельна версія коду. Як чернетка документу — можна експериментувати, не зламавши оригінал.</div></div>
+  <div class="glossary-item"><div class="glossary-term">main</div><div class="glossary-def">Головна гілка — "продакшн" код, який працює на сервері.</div></div>
+  <div class="glossary-item"><div class="glossary-term">develop</div><div class="glossary-def">Гілка для збирання готових фіч перед випуском. "Тестовий полігон".</div></div>
+  <div class="glossary-item"><div class="glossary-term">feature branch</div><div class="glossary-def">Окрема гілка для конкретної задачі: feature/add-dates, feature/fix-login.</div></div>
+  <div class="glossary-item"><div class="glossary-term">origin</div><div class="glossary-def">Стандартна назва (alias) для вашого віддаленого репозиторію на GitHub. Як контакт у телефоні.</div></div>
+  <div class="glossary-item"><div class="glossary-term">remote</div><div class="glossary-def">Віддалений сервер (зазвичай GitHub), де зберігається "хмарна" копія репозиторію.</div></div>
+  <div class="glossary-item"><div class="glossary-term">clone</div><div class="glossary-def">Скопіювати весь репозиторій з GitHub на свій комп'ютер.</div></div>
+  <div class="glossary-item"><div class="glossary-term">fetch</div><div class="glossary-def">Перевірити, чи є нові зміни на remote. НЕ змінює ваші файли — тільки інформація.</div></div>
+  <div class="glossary-item"><div class="glossary-term">pull</div><div class="glossary-def">Завантажити зміни з remote І злити їх з вашою гілкою. fetch + merge в одній команді.</div></div>
+  <div class="glossary-item"><div class="glossary-term">push</div><div class="glossary-def">Відправити ваші коміти на remote (GitHub). Зробити їх доступними для інших.</div></div>
+  <div class="glossary-item"><div class="glossary-term">staging area (index)</div><div class="glossary-def">Проміжна зона перед комітом. Ви обираєте, які файли потраплять у наступний коміт.</div></div>
+  <div class="glossary-item"><div class="glossary-term">git add</div><div class="glossary-def">Додати файли до staging area. "Покласти в кошик" перед "покупкою" (комітом).</div></div>
+  <div class="glossary-item"><div class="glossary-term">merge</div><div class="glossary-def">Злити одну гілку в іншу. Об'єднати зміни.</div></div>
+  <div class="glossary-item"><div class="glossary-term">merge conflict</div><div class="glossary-def">Ситуація, коли Git не може автоматично злити зміни — дві людини змінили одне місце.</div></div>
+  <div class="glossary-item"><div class="glossary-term">Pull Request (PR)</div><div class="glossary-def">Запит на злиття вашої гілки. Інші перевіряють код + запускаються автоматичні тести.</div></div>
+  <div class="glossary-item"><div class="glossary-term">code review</div><div class="glossary-def">Процес перевірки чужого коду перед злиттям. Другий погляд = менше багів.</div></div>
+  <div class="glossary-item"><div class="glossary-term">Conventional Commits</div><div class="glossary-def">Домовленість, як підписувати коміти — не команда Git, а правило для людей. Підпис починається зі слова, що каже тип зміни: feat: — додав нове, fix: — виправив поломку, refactor: — переписав код без зміни поведінки, docs: — чіпав тільки тексти. Щоб потім можна було швидко знайти потрібне в історії.</div></div>
+  <div class="glossary-item"><div class="glossary-term">CI/CD</div><div class="glossary-def">Continuous Integration / Continuous Deployment — автоматичні тести + деплой при кожному злитті.</div></div>
+  <div class="glossary-item"><div class="glossary-term">deploy (деплой)</div><div class="glossary-def">Опублікувати код на сервері, зробити його доступним для користувачів.</div></div>
+  <div class="glossary-item"><div class="glossary-term">rollback</div><div class="glossary-def">Повернутися до попередньої робочої версії. "Ctrl+Z" для сервера.</div></div>
+  <div class="glossary-item"><div class="glossary-term">Railway</div><div class="glossary-def">Платформа для хостингу. Автоматично збирає і запускає ваш код з GitHub.</div></div>
+  <div class="glossary-item"><div class="glossary-term">Cloudflare</div><div class="glossary-def">Сервіс DNS + CDN. Направляє ваш домен (crm.example.com) на сервер Railway.</div></div>
+  <div class="glossary-item"><div class="glossary-term">health check</div><div class="glossary-def">Автоматична перевірка "чи живий сервер". Railway пінгає ваш додаток кожні N секунд.</div></div>
+  <div class="glossary-item"><div class="glossary-term">hotfix</div><div class="glossary-def">Терміновий фікс прямо в main, коли продакшн зламаний. Обходить звичайний процес.</div></div>
+  <div class="glossary-item"><div class="glossary-term">flaky test</div><div class="glossary-def">Нестабільний тест — то проходить, то падає. Причина: залежність від часу, мережі або порядку виконання.</div></div>
+</div>
+
+<!-- Cheatsheet Panel -->
+<div id="cheatsheet-panel" class="slide-panel">
+  <button class="panel-close" onclick="toggleCheatsheet()">&times;</button>
+  <h2>⌨️ Git Cheat Sheet</h2>
+
+  <div class="cheat-group">
+    <h3>Початок роботи</h3>
+    <div class="cheat-row"><span class="cheat-cmd">git clone &lt;url&gt;</span><span class="cheat-desc">Клонувати репо</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git status</span><span class="cheat-desc">Перевірити стан</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git log --oneline</span><span class="cheat-desc">Історія комітів</span></div>
+  </div>
+
+  <div class="cheat-group">
+    <h3>Синхронізація</h3>
+    <div class="cheat-row"><span class="cheat-cmd">git fetch</span><span class="cheat-desc">Перевірити remote</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git pull origin develop</span><span class="cheat-desc">Завантажити + злити</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git push origin &lt;branch&gt;</span><span class="cheat-desc">Відправити коміти</span></div>
+  </div>
+
+  <div class="cheat-group">
+    <h3>Гілки</h3>
+    <div class="cheat-row"><span class="cheat-cmd">git branch</span><span class="cheat-desc">Список гілок</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git checkout -b &lt;name&gt;</span><span class="cheat-desc">Нова гілка</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git checkout &lt;name&gt;</span><span class="cheat-desc">Перейти на гілку</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git branch -d &lt;name&gt;</span><span class="cheat-desc">Видалити гілку</span></div>
+  </div>
+
+  <div class="cheat-group">
+    <h3>Зміни</h3>
+    <div class="cheat-row"><span class="cheat-cmd">git add .</span><span class="cheat-desc">Stage усіх змін</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git add &lt;file&gt;</span><span class="cheat-desc">Stage одного файлу</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git commit -m "msg"</span><span class="cheat-desc">Зберегти коміт</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git diff</span><span class="cheat-desc">Побачити зміни</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git stash</span><span class="cheat-desc">Тимчасово сховати</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git stash pop</span><span class="cheat-desc">Повернути сховане</span></div>
+  </div>
+
+  <div class="cheat-group">
+    <h3>Виправлення проблем</h3>
+    <div class="cheat-row"><span class="cheat-cmd">git pull origin develop</span><span class="cheat-desc">Push відхилено?</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git log --merge</span><span class="cheat-desc">Конфлікти?</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git reset HEAD &lt;file&gt;</span><span class="cheat-desc">Unstage файл</span></div>
+    <div class="cheat-row"><span class="cheat-cmd">git checkout -- &lt;file&gt;</span><span class="cheat-desc">Скасувати зміни</span></div>
+  </div>
+
+  <div class="cheat-group">
+    <h3>⚠️ Ніколи не робити</h3>
+    <div class="cheat-row"><span class="cheat-cmd" style="color:var(--clr-error)">git push --force</span><span class="cheat-desc">Перезапише чужу роботу!</span></div>
+    <div class="cheat-row"><span class="cheat-cmd" style="color:var(--clr-error)">git reset --hard</span><span class="cheat-desc">Втратите всі зміни!</span></div>
+  </div>
+</div>
+
+<!-- Scripts (order matters: state → engine → visualizer → tutorial → sandbox → failures → quiz → app) -->
+<script src="js/state.js"></script>
+<script src="js/git-engine.js"></script>
+<script src="js/visualizer.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/sandbox.js"></script>
+<script src="js/failures.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

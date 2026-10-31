@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071c37">
+  <title>Творча дошка — AINARIUM</title>
+  <link rel="stylesheet" href="assets/gallery/gallery.css">
+  <script src="assets/gallery/gallery.js" defer></script>
+  <script src="assets/gallery/gallery-transfer.js" defer></script>
+<link rel="stylesheet" href="assets/gallery/gallery-transfer.css">
+<link rel="stylesheet" href="assets/mobile-view.css?v=browse-v1-2">
+</head>
+<body class="gallery-app">
+  <header class="gallery-header">
+    <div class="gallery-header-intro">
+      <a class="gallery-brand" href="app.html#showroom" aria-label="AINARIUM — повернутися до курсу"><img src="logo.png" alt="AINARIUM" width="145" height="40"></a>
+      <img class="gallery-header-guide" src="assets/ainaya-think.webp" width="48" height="72" alt="Айная допомагає створювати"><div class="gallery-header-title"><span>ПРОСТІР ВЛАСНИХ РОБІТ</span><h1>Творча дошка</h1></div>
+    </div>
+    <div class="gallery-header-actions">
+      <a id="backToCourse" class="gallery-back-link" href="app.html#showroom"><span aria-hidden="true">←</span> До курсу</a>
+      <button id="openTransferBtn" class="gallery-button gallery-button-primary gallery-transfer-button" type="button"><span>Додати цю дошку на мій сайт</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </div>
+  </header>
+
+  <div class="gallery-workspace">
+    <aside class="gallery-sidebar" aria-label="Мої дошки">
+      <div class="gallery-sidebar-heading"><h2>Мої дошки</h2><span class="gallery-sidebar-mark" aria-hidden="true">✧</span></div>
+      <nav id="boardList" class="gallery-board-list" aria-label="Обрати дошку"></nav>
+      <button id="newBoardBtn" class="gallery-button gallery-button-outline gallery-new-board" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Нова дошка</button>
+
+      <div class="gallery-library">
+        <div class="gallery-library-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg><h3>Твоя папка</h3></div>
+        <p>Збирай матеріали, які потім використаєш на власному сайті.</p>
+        <span id="libraryState" class="gallery-library-state">Папку ще не під’єднано</span>
+        <button id="connectFolderBtn" class="gallery-button gallery-button-subtle" type="button">Під’єднати папку</button>
+      </div>
+
+      <div class="gallery-guide" aria-label="Підказка Айнаї">
+        <img src="assets/ainaya-point.webp" alt="Айная — твій AI-провідник" width="142" height="164">
+        <div><span>АЙНАЯ</span><p>Тут твої роботи стають колекцією. Створи дошку, додай зображення й обери, як їх показати.</p></div>
+      </div>
+    </aside>
+
+    <main class="gallery-main" id="galleryMain">
+      <section class="gallery-board-heading" aria-label="Назва та опис дошки">
+        <div class="gallery-board-heading-top"><span class="gallery-eyebrow">ТВОЯ КОЛЕКЦІЯ</span><span id="itemCount" class="gallery-item-count">0 робіт</span></div>
+        <label class="gallery-sr-only" for="boardTitle">Назва дошки</label>
+        <input id="boardTitle" class="gallery-title-input" type="text" maxlength="100" placeholder="Назви свою дошку" autocomplete="off">
+        <label class="gallery-sr-only" for="boardCaption">Короткий опис дошки</label>
+        <textarea id="boardCaption" class="gallery-caption-input" rows="2" maxlength="600" placeholder="Про що ця колекція? Додай короткий опис."></textarea>
+      </section>
+
+      <div class="gallery-board-toolbar">
+        <div class="gallery-upload-actions">
+          <button id="addPhotosBtn" class="gallery-button gallery-button-primary" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-5 5 5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg> Додати зображення</button>
+          <button id="photoPromptBtn" class="gallery-button gallery-button-outline" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 5.8L20 11l-6.2 2.2L12 19l-1.8-5.8L4 11l6.2-2.2L12 3Zm7 14 .7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7L19 17Z"/></svg> Додати через AI</button>
+          <input id="photoInput" type="file" accept="image/*" multiple hidden>
+        </div>
+        <p class="gallery-upload-hint">Перетягни фото сюди або встав із буфера.</p>
+      </div>
+
+      <section id="dropZone" class="gallery-drop-zone" aria-label="Полотно творчої дошки" style="--board-bg:#071c37;--board-accent:#6be8ff;--board-surface:#123353;--board-gap:24px;--card-size:280px">
+        <div id="boardCanvas" class="gallery-canvas layout-grid"></div>
+        <div id="emptyState" class="gallery-empty-state">
+          <div class="gallery-empty-art" aria-hidden="true"><span class="gallery-empty-frame gallery-empty-frame-back"></span><span class="gallery-empty-frame gallery-empty-frame-front"><svg viewBox="0 0 72 72"><rect x="9" y="13" width="54" height="46" rx="7"/><circle cx="27" cy="29" r="5"/><path d="m14 52 15-14 10 9 10-12 10 17"/></svg></span><span class="gallery-empty-spark">✧</span></div>
+          <span class="gallery-eyebrow">МІСЦЕ ДЛЯ ТВОЇХ РОБІТ</span>
+          <h2>Почни з першого зображення</h2>
+          <p>Малюнки, фотографії, ілюстрації або роботи, створені з AI. Додай свої файли — і склади з них власну історію.</p>
+          <div class="gallery-empty-methods"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 3 4 16 3-6 6-3L5 3Z"/></svg> Перетягни</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="12" height="16" rx="2"/><path d="M9 5V3h6v2M9 10h6M9 14h6"/></svg> Встав із буфера</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17V4m-5 5 5-5 5 5M4 17v3h16v-3"/></svg> Обери файли</span></div>
+        </div>
+      </section>
+
+      <footer class="gallery-board-footer">
+        <div class="gallery-status-row"><p id="boardStatus" class="gallery-board-status" role="status" aria-live="polite">Дошка готова до твоїх ідей.</p><button id="restorePhotoBtn" class="gallery-button gallery-button-subtle" type="button" hidden>Повернути останнє фото</button></div>
+        <p class="gallery-local-note"><span aria-hidden="true"></span>Фото залишаються у цьому браузері й не надсилаються в інтернет. Для власного сайту збережи набір.</p>
+      </footer>
+    </main>
+
+    <aside class="gallery-inspector" aria-labelledby="galleryInspectorTitle">
+      <div class="gallery-inspector-heading"><span class="gallery-eyebrow">НАЛАШТУВАННЯ</span><h2 id="galleryInspectorTitle">Вигляд дошки</h2></div>
+      <section class="gallery-inspector-section">
+        <h3>Композиція</h3>
+        <div class="gallery-layout-switch" role="group" aria-label="Розташування робіт">
+          <button id="layoutGrid" type="button" class="active" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Сітка</span></button>
+          <button id="layoutFree" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 9-1 1 9-9 1-1-9Zm8 9 9 1-1 8-9-1 1-8Z"/></svg><span>Вільна дошка</span></button>
+        </div>
+        <p class="gallery-inspector-note">У вільній композиції роботи можна розміщувати на полотні самостійно.</p>
+      </section>
+      <section class="gallery-inspector-section">
+        <h3>Атмосфера</h3>
+        <div class="gallery-preset-list" role="group" aria-label="Готові поєднання кольорів">
+          <button type="button" data-board-preset="cosmos"><span class="gallery-preset-swatch gallery-preset-cosmos" aria-hidden="true"></span>Космос</button>
+          <button type="button" data-board-preset="midnight"><span class="gallery-preset-swatch gallery-preset-midnight" aria-hidden="true"></span>Ніч</button>
+          <button type="button" data-board-preset="paper"><span class="gallery-preset-swatch gallery-preset-paper" aria-hidden="true"></span>Світла</button>
+        </div>
+        <div class="gallery-color-list">
+          <label for="boardBackground"><span>Полотно</span><input id="boardBackground" type="color" value="#071c37" aria-label="Колір полотна"></label>
+          <label for="boardAccent"><span>Акцент</span><input id="boardAccent" type="color" value="#6be8ff" aria-label="Акцентний колір"></label>
+          <label for="boardSurface"><span>Картки</span><input id="boardSurface" type="color" value="#123353" aria-label="Колір карток"></label>
+        </div>
+      </section>
+      <section class="gallery-inspector-section gallery-size-section">
+        <h3>Масштаб і відступи</h3>
+        <label class="gallery-range-label" for="cardSize"><span>Розмір робіт</span><output id="cardSizeValue" for="cardSize">280 px</output></label>
+        <input id="cardSize" class="gallery-range" type="range" min="180" max="400" value="280" step="10">
+        <label class="gallery-range-label" for="boardGap"><span>Відстань між ними</span><output id="boardGapValue" for="boardGap">24 px</output></label>
+        <input id="boardGap" class="gallery-range" type="range" min="16" max="48" value="24" step="2">
+      </section>
+      <div class="gallery-inspector-tip"><span aria-hidden="true">↗</span><p>Натисни «Редагувати» біля роботи, щоб додати назву, опис або змінити показ зображення.</p></div>
+    </aside>
+  </div>
+
+  <dialog id="photoEditor" class="gallery-dialog" aria-labelledby="galleryPhotoEditorTitle">
+    <form id="photoEditForm" class="gallery-editor-form">
+      <header class="gallery-dialog-header"><div><span class="gallery-eyebrow">ТВОЯ РОБОТА</span><h2 id="galleryPhotoEditorTitle">Деталі зображення</h2></div><button id="closePhotoEditor" class="gallery-icon-button" type="button" aria-label="Закрити редагування"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <input id="editPhotoId" type="hidden">
+      <div class="gallery-form-field"><label for="editTitle">Назва роботи</label><input id="editTitle" type="text" maxlength="160" placeholder="Як називається ця робота?"></div>
+      <div class="gallery-form-field"><label for="editCaption">Історія або опис</label><textarea id="editCaption" rows="4" maxlength="2000" placeholder="Що ти хочеш розповісти про неї?"></textarea></div>
+      <div class="gallery-form-field"><label for="editAlt">Короткий опис того, що зображено</label><input id="editAlt" type="text" maxlength="500" placeholder="Допомагає зрозуміти зображення без перегляду"></div>
+      <div class="gallery-form-field"><label for="editFit">Як показувати зображення</label><select id="editFit"><option value="cover">Заповнити картку</option><option value="contain">Показати повністю</option></select></div>
+      <div class="gallery-editor-layout"><div class="gallery-form-field"><label for="editRotation">Нахил картки</label><input id="editRotation" type="number" min="-15" max="15" step="1" value="0"></div><div class="gallery-form-field gallery-editor-width"><label class="gallery-range-label" for="editWidth"><span>Розмір картки</span><output id="editWidthValue" for="editWidth">280 px</output></label><input id="editWidth" class="gallery-range" type="range" min="180" max="500" step="10" value="280"></div></div>
+      <footer class="gallery-dialog-footer"><button id="deletePhotoBtn" type="button" class="gallery-button gallery-button-danger">Прибрати з дошки</button><button id="savePhotoBtn" class="gallery-button gallery-button-primary" type="submit">Зберегти зміни</button></footer>
+    </form>
+  </dialog>
+<dialog id="boardTransferDialog" class="board-transfer-dialog" aria-labelledby="boardTransferTitle">
+  <div class="board-transfer-heading"><div><span class="board-transfer-eyebrow">AINARIUM / ПЕРЕНЕСТИ ДО СВОГО САЙТУ</span><h2 id="boardTransferTitle">Твоя дошка — готовий матеріал для AI</h2></div><button id="closeBoardTransfer" class="board-transfer-close" type="button" aria-label="Закрити перенесення дошки">×</button></div>
+  <p class="board-transfer-summary" id="boardTransferSummary">Активна дошка та всі її фотографії увійдуть до набору.</p>
+  <div class="board-transfer-connection"><div><span class="board-transfer-label">Бібліотека матеріалів</span><strong id="transferFolderState">Папку ще не під’єднано</strong></div><button id="connectTransferFolderBtn" class="board-transfer-button board-transfer-secondary" type="button">Під’єднати папку</button></div>
+  <div class="board-transfer-main-actions"><button id="saveBoardPackageBtn" class="board-transfer-button board-transfer-primary" type="button">Зберегти дошку в папку й скопіювати prompt</button><button id="downloadBoardPackageBtn" class="board-transfer-button board-transfer-secondary" type="button">Завантажити набір без папки</button></div>
+  <p class="board-transfer-note">У папці з’явиться окремий набір: галерея з усіма фото, опис дошки та інструкція для AI. Без папки завантажується один самостійний HTML-файл із фото й інструкцією всередині.</p>
+  <p class="board-transfer-note">Потрібен лише зразок? Опиши, яку деталь узяти з ainarium.com — посилання та вказівка для AI вже є у prompt. Власні фото передай окремо.</p>
+  <div class="board-transfer-request-grid"><div class="board-transfer-field"><label for="photoAdditionRequest">Що попросити Codex або Claude?</label><textarea id="photoAdditionRequest" rows="3" maxlength="4000" placeholder="Наприклад: додай цю дошку як розділ «Мої роботи» та збережи її оформлення."></textarea></div><div class="board-transfer-field"><label for="photoPathHint">Шлях до додаткового фото — за бажанням</label><input id="photoPathHint" type="text" maxlength="2000" placeholder="Встав власний шлях до фото, якщо хочеш додати нове"><p>Або прикріпи фото безпосередньо в чаті AI. Сайт не вгадує, де воно зберігається.</p></div></div>
+  <p class="board-transfer-photo-context" id="photoTransferContext" hidden></p>
+  <div class="board-transfer-prompt-heading"><label for="boardTransferPrompt">Готовий prompt українською</label><button id="copyBoardPromptBtn" class="board-transfer-button board-transfer-secondary" type="button">Скопіювати prompt</button></div>
+  <textarea id="boardTransferPrompt" class="board-transfer-prompt" rows="10" readonly spellcheck="false" aria-describedby="boardTransferStatus"></textarea>
+  <p id="boardTransferStatus" class="board-transfer-status" role="status" aria-live="polite">Для зразка достатньо опису й посилання в prompt. Для власних фотографій додай збережений набір.</p>
+</dialog>
+
+<script src="assets/mobile-view.js?v=browse-v1-2" defer></script>
+</body>
+</html>

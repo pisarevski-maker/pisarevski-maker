@@ -1,0 +1,7 @@
+
+.gallery-course-invite{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:26px;border:1px solid #9aeaff88;border-radius:21px;padding:26px;background:linear-gradient(120deg,#12517ce8,#0c2844ec);box-shadow:0 0 25px #16b8ff24}
+body.unified-course .gallery-course-invite h3{font-size:29px;margin:0 0 10px;color:#eafaff}
+body.unified-course .gallery-course-invite p{font-size:22px;line-height:1.5;margin:0;color:#cee7f7}
+.gallery-course-invite>a{display:flex;align-items:center;justify-content:center;min-height:62px;max-width:340px;padding:16px 22px;border:1px solid #aeffff;border-radius:14px;background:#1579af;color:white;font-size:23px;font-weight:650;text-decoration:none;text-align:center}
+.gallery-course-invite>a:focus-visible{outline:3px solid #b9faff;outline-offset:4px}
+@media(max-width:1100px){.gallery-course-invite{grid-template-columns:1fr}.gallery-course-invite>a{max-width:none}}
