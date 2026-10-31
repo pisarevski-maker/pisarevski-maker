@@ -1,7 +1,7 @@
 {
   "url": "https://ainarium.com",
-  "version_id": "82bcd485-6301-40bd-ad53-2915466e022e",
-  "previous_version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
+  "version_id": "42a9ba44-41c1-4cc4-9187-2cb29efaabef",
+  "previous_version_id": "82bcd485-6301-40bd-ad53-2915466e022e",
   "total_files": 59,
   "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
   "browser_checks": {
@@ -200,11 +200,6 @@
       "sha256_matches": true
     },
     {
-      "path": "assets/mobile-view.js",
-      "status": 200,
-      "sha256_matches": true
-    },
-    {
       "path": "assets/showroom.css",
       "status": 200,
       "sha256_matches": true
@@ -306,6 +301,11 @@
     },
     {
       "path": "vibecoding-concept.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/mobile-view.js",
       "status": 200,
       "sha256_matches": true
     }
@@ -420,5 +420,57 @@
       "Physical iOS/Safari device not tested."
     ],
     "return_destination": "https://ainarium.com/app#showroom"
+  },
+  "mobile_step_navigation": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "local": [
+      {
+        "case": "after previous",
+        "step": "7",
+        "visible": true
+      },
+      {
+        "case": "after next",
+        "step": "8",
+        "visible": true
+      },
+      {
+        "case": "direct menu selection",
+        "step": "10",
+        "visible": true
+      }
+    ],
+    "live": [
+      {
+        "case": "live Next",
+        "step": "5",
+        "visible": true
+      },
+      {
+        "case": "live Previous",
+        "horizontalOverflow": false,
+        "step": "4",
+        "visible": true
+      }
+    ],
+    "narrow320": {
+      "activeVisible": true,
+      "horizontalOverflow": false
+    },
+    "desktop1280": {
+      "menuDirection": "column",
+      "mobile": false
+    },
+    "limitation": "Browser viewport emulation; physical phones were not tested.",
+    "version_id": "42a9ba44-41c1-4cc4-9187-2cb29efaabef",
+    "published_asset": {
+      "path": "assets/mobile-view.js",
+      "status": 200,
+      "sha256_matches": true
+    },
+    "change": "Center active step in mobile menu after navigation and when entering mobile layout."
   }
 }

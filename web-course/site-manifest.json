@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31-return-to-showroom",
+  "version": "2026-10-31-mobile-step-navigation",
   "screens": 12,
   "source_directory": "public",
   "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
@@ -192,8 +192,8 @@
     },
     {
       "path": "public/assets/mobile-view.js",
-      "bytes": 16050,
-      "sha256": "70158506f030d2ee2fe6dd719afc7625ed8a5185f968dcb65f86d7a7041b599c"
+      "bytes": 16753,
+      "sha256": "d7f752ab1d534fcfd07546d1052f7a1cf56de4b2981c934dbc5f5c62555c0ef1"
     },
     {
       "path": "public/assets/showroom.css",

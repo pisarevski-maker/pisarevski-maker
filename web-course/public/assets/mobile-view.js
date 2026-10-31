@@ -44,6 +44,7 @@
       slide.append(panel);
     });
     let lastCourseStep = null;
+    let wasMobile = false;
     const originalShell=window.updateCourseShell;
     const originalPromptModal=window.openPromptModal;
     window.openPromptModal=function(...args){if(media.matches){showMobileNotice();return;}return originalPromptModal.apply(this,args);};
@@ -52,8 +53,20 @@
       const index=slides.findIndex(slide=>slide.classList.contains('active'));
       const stepChanged=index!==lastCourseStep;
       lastCourseStep=index;
+      const mobileEntered=media.matches&&!wasMobile;
+      wasMobile=media.matches;
       if(media.matches&&stepChanged)window.scrollTo(0,0);
       [...document.querySelectorAll('#dots .dot')].forEach((dot,i)=>{if(media.matches){const number=node('span','',String(i+1).padStart(2,'0'));dot.replaceChildren(number,document.createTextNode(steps[i]?.label||'Початок історії'));}else if(dot.textContent!==dotLabels[i]){const number=node('span','',String(i+1).padStart(2,'0'));dot.replaceChildren(number,document.createTextNode(dotLabels[i].replace(/^\d+\s*/,'')));}});
+      if(media.matches&&(stepChanged||mobileEntered)){
+        const menu=document.getElementById('dots');
+        const active=menu.querySelector('[aria-current="step"]');
+        if(active){
+          const item=active.getBoundingClientRect(),viewport=menu.getBoundingClientRect();
+          const left=menu.scrollLeft+item.left-viewport.left-(menu.clientWidth-item.width)/2;
+          const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          menu.scrollTo({left,behavior:mobileEntered||reducedMotion?'instant':'smooth'});
+        }
+      }
       if(media.matches){const guide=document.getElementById('courseGuideText');if(index>0)guide.textContent=steps[index]?.lead||'Гортай галерею і знаходь власні ідеї.';const next=document.getElementById('nextBtn');if(index===6){next.disabled=false;next.classList.remove('next-locked');next.textContent='Далі →';}if(index===9)next.textContent='Галерея ідей →';}
     };
     document.getElementById('nextBtn').addEventListener('click',event=>{if(!media.matches)return;const index=slides.findIndex(slide=>slide.classList.contains('active'));if(index===6){event.preventDefault();event.stopImmediatePropagation();window.go(7);}},true);

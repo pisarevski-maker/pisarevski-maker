@@ -76,3 +76,7 @@ DNS E-Tech, домен `ainarium.com.ua` та наявні правила Email 
 Загальнодоступні матеріали можна завантажувати; ці налаштування не створюють DRM. Репозиторій залишається публічним за рішенням власника.
 
 Для локальної перевірки з поточним емулятором: `npx wrangler@4.156.0 dev --compatibility-date 2026-10-30`; дата робочого Worker лишається 2026-10-31.
+
+## Mobile step navigation
+
+The horizontal step menu follows Next/Previous and direct step navigation. It centers the active step on mobile entry, preserves desktop navigation, and respects reduced motion. Verify at 390x844: open step 5, use Next/Previous, and check that the active step remains visible.
