@@ -45,10 +45,14 @@ python verify.py
 
 ## Публікація 2026-10-31
 
-Живий сайт: https://wispy-wildflower-4a02.pisarevski.workers.dev/
+Живий сайт: https://ainarium.com/
+
+Технічна адреса також доступна: https://wispy-wildflower-4a02.pisarevski.workers.dev/
 
 Оновлено наявний Worker `wispy-wildflower-4a02`. Версія з робочою поштою: `bdb8e718-1162-471c-8ef4-2f9c13f4807b`. Підтвердження доставки й перевірки — у `deployment-status.json`.
 
 Попередня версія без поштового API: `f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd`. За потреби повернення: `npx wrangler@4.156.0 rollback f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd --name wispy-wildflower-4a02`. Після повернення пошта не працюватиме.
 
-Власний домен та DNS E-Tech не змінювалися. Наявні правила Email Routing збережено.
+Домен `ainarium.com` підключено до цього Worker як Custom Domain. У `wrangler.jsonc` прив’язку збережено для наступних публікацій. HTTPS перевірено; усі 57 файлів на домені збігаються з пакетом, а поштовий API коректно перевіряє вхідні дані. Якщо окремий DNS-провайдер ще повертає стару негативну відповідь, потрібен час для оновлення його кешу.
+
+DNS E-Tech, домен `ainarium.com.ua` та наявні правила Email Routing не змінювалися.

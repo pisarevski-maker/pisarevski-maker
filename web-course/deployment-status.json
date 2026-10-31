@@ -1,5 +1,5 @@
 {
-  "url": "https://wispy-wildflower-4a02.pisarevski.workers.dev",
+  "url": "https://ainarium.com",
   "version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
   "previous_version_id": "f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd",
   "total_files": 57,
@@ -310,5 +310,14 @@
       "sha256_matches": true
     }
   ],
-  "verified_files": 57
+  "verified_files": 57,
+  "technical_url": "https://wispy-wildflower-4a02.pisarevski.workers.dev",
+  "custom_domain": {
+    "hostname": "ainarium.com",
+    "user_confirmed_connection": true,
+    "https_verified": true,
+    "verified_files": 57,
+    "feedback_validation_status": 400,
+    "dns_cache_note": "Cloudflare authoritative and 1.1.1.1 respond with A records; browser opens HTTPS. Default system resolver still returns a stale negative answer."
+  }
 }
