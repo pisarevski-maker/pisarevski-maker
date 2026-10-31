@@ -3,7 +3,13 @@ const MAX_BODY_BYTES = 32768;
 function reply(status, error = null) {
   return Response.json(error ? {ok: false, error} : {ok: true}, {
     status,
-    headers: {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff'}
+    headers: {
+      'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'no-referrer',
+      'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'"
+    }
   });
 }
 

@@ -1,10 +1,15 @@
 {
-  "version": "2026-10-31-intro-guide-right",
+  "version": "2026-10-31-security-hardening",
   "screens": 12,
   "source_directory": "public",
   "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
   "private_recipient_in_source": false,
   "files": [
+    {
+      "path": "public/_headers",
+      "bytes": 507,
+      "sha256": "fe6ee83937837a57ad654f7b7f7e687c53620be73f30a9c74174e9d6528285b4"
+    },
     {
       "path": "public/app.html",
       "bytes": 1042340,
@@ -290,5 +295,8 @@
       "bytes": 1842362,
       "sha256": "53ad73aba45bee4ff6090b92888cb8bd1fece9aeaf4d39728598af1ff9f3b554"
     }
+  ],
+  "control_files": [
+    "public/_headers (Cloudflare configuration, not served as a public resource)"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "url": "https://ainarium.com",
-  "version_id": "2ee5233e-4380-40ea-8605-ca51a8d238e9",
-  "previous_version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
+  "version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+  "previous_version_id": "2ee5233e-4380-40ea-8605-ca51a8d238e9",
   "total_files": 57,
   "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
   "browser_checks": {
@@ -328,5 +328,47 @@
     "live_index_verified": true,
     "desktop": "1280x720; right 5%; no video or button overlap",
     "mobile": "390x844; existing right 4% rule preserved"
-  }
+  },
+  "security": {
+    "version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+    "https_redirect_enabled": true,
+    "minimum_tls": "1.2 (verified in Cloudflare dashboard)",
+    "tls_1_3": "already enabled",
+    "headers": {
+      "/": "Verified CSP, same-origin framing, nosniff, permissions and referrer policies.",
+      "/app": "Verified CSP, same-origin framing, nosniff, permissions and referrer policies.",
+      "/authors": "Verified CSP, same-origin framing, nosniff, permissions and referrer policies.",
+      "/gallery": "Verified CSP, same-origin framing, nosniff, permissions and referrer policies."
+    },
+    "private_paths": {
+      "/_headers": 404,
+      "/.env": 404,
+      "/worker.mjs": 404,
+      "/wrangler.jsonc": 404,
+      "/.git/config": 404
+    },
+    "account_2fa": "Setup pending: user needs to create Cloudflare password for a Google-login account.",
+    "dnssec": "Not enabled; manual user action required after automatic approval rejection",
+    "ct_monitoring": "Enabled, recipient enrollment still required",
+    "bot_fight_mode": "Left off to preserve AI assistant/API access; existing per-IP feedback limiter remains active",
+    "waf": "Cloudflare default free protections observed in dashboard; no paid managed rules added",
+    "api_live_checks": [
+      {
+        "case": "foreign origin",
+        "status": 403
+      },
+      {
+        "case": "empty fields",
+        "status": 400
+      },
+      {
+        "case": "oversized body",
+        "status": 413
+      }
+    ],
+    "registrar_transfer_lock": "Enabled (Unlock action is offered)",
+    "whois_privacy": "Enabled",
+    "browser_compatibility": "Live authors iframe loads without console errors. Local intro, gallery, Git Kindergarden and finale verified with CSP."
+  },
+  "package_files": 58
 }
