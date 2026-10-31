@@ -1,7 +1,7 @@
 {
   "url": "https://ainarium.com",
-  "version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
-  "previous_version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+  "version_id": "82bcd485-6301-40bd-ad53-2915466e022e",
+  "previous_version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
   "total_files": 59,
   "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
   "browser_checks": {
@@ -389,21 +389,21 @@
   },
   "package_files": 60,
   "showroom_navigation": {
-    "version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
-    "previous_version_id": "d7ffcee8-50b9-49f7-9366-001ecc9a329b",
+    "version_id": "82bcd485-6301-40bd-ad53-2915466e022e",
+    "previous_version_id": "de55b0a0-8c1d-4bcc-9789-0c14eace2e0d",
     "same_tab_projects": [
       "gallery",
       "electrons",
       "Git Kindergarden"
     ],
-    "return_button": "Blue До інтро link on all three examples",
+    "return_button": "Blue До шоуруму link on all three examples",
     "electrons_url": "https://ainarium.com/e-tech",
     "external_source": "https://e-tech-ainarium.pages.dev/",
     "source_site_modified": false,
     "browser_checks": [
-      "Desktop E-Tech, gallery and Git open without increasing tab count; all three return to intro.",
-      "390x844: E-Tech return button visible; no horizontal page overflow. Mobile showroom links use the current tab.",
-      "Live E-Tech lesson loaded inside AINARIUM with no console warnings or errors."
+      "All three return links resolve to the showroom; exact published files verified.",
+      "Live E-Tech return click opens https://ainarium.com/app#showroom with the showroom heading visible.",
+      "Same-window navigation and mobile layout were verified in the preceding change; this correction changes only return captions and destinations."
     ],
     "verified_live_files": [
       "app.html",
@@ -418,6 +418,7 @@
     "limitations": [
       "External example availability depends on its existing Pages deployment.",
       "Physical iOS/Safari device not tested."
-    ]
+    ],
+    "return_destination": "https://ainarium.com/app#showroom"
   }
 }

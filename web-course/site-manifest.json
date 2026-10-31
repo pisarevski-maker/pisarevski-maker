@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-31-showroom-same-tab",
+  "version": "2026-10-31-return-to-showroom",
   "screens": 12,
   "source_directory": "public",
   "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
@@ -222,8 +222,8 @@
     },
     {
       "path": "public/e-tech.html",
-      "bytes": 1827,
-      "sha256": "2f51ceeede4c05d287382d40e9147941b9756c28667b5c4f1ff21bc928b6f26c"
+      "bytes": 1842,
+      "sha256": "91ddce7e18df5b7b3f28466c8f46db9d83c14837a18650608418a9cd53c8623b"
     },
     {
       "path": "public/examples/git-kindergarden/css/styles.css",
@@ -232,8 +232,8 @@
     },
     {
       "path": "public/examples/git-kindergarden/index.html",
-      "bytes": 13691,
-      "sha256": "790082549a142a99b5b7f119493e8170bb40efd434976350fdc494f82d03f94a"
+      "bytes": 13702,
+      "sha256": "6143e63c82a851c89e91c368d71874460612ec6309b26658240200b606fb878d"
     },
     {
       "path": "public/examples/git-kindergarden/js/app.js",
@@ -282,8 +282,8 @@
     },
     {
       "path": "public/gallery.html",
-      "bytes": 17234,
-      "sha256": "22becf34add95aa4f13d61af6cc2f4947b9667d8c243ce5144f3de949cd1b88c"
+      "bytes": 17245,
+      "sha256": "ea6140344aa525cdd85ffcdae023bc2ba749892aadae4e91e75c23d105ad282f"
     },
     {
       "path": "public/index.html",
