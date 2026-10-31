@@ -1,8 +1,8 @@
 {
-  "version": "2026-10-31",
+  "version": "2026-10-31-feedback-live",
   "screens": 12,
   "source_directory": "public",
-  "feedback_delivery": "Cloudflare email setup pending; form does not report false delivery",
+  "feedback_delivery": "Cloudflare binding; test accepted and user confirmed delivery to Inbox.",
   "private_recipient_in_source": false,
   "files": [
     {
@@ -84,6 +84,11 @@
       "path": "public/assets/course-viewport.css",
       "bytes": 804,
       "sha256": "478f74e10beca99a08ad1cee12805522b8c93210f255d82b716b3dc9b052943d"
+    },
+    {
+      "path": "public/assets/feedback.js",
+      "bytes": 1866,
+      "sha256": "5a3d9d291a1705fce9a992d6c47b1e3cfccdda4a3918a204f06699f948e4f121"
     },
     {
       "path": "public/assets/gallery/course-invite.css",
@@ -187,8 +192,8 @@
     },
     {
       "path": "public/authors.html",
-      "bytes": 21909,
-      "sha256": "96482e825f25a39cdd0614d1008ca9d4d4deeee90c96f5287e882863293a3c16"
+      "bytes": 21661,
+      "sha256": "ccb3a6e06f17d5933e636a791a5c0afd56404208698d8f5187a6864e0f95fb53"
     },
     {
       "path": "public/bg-desktop.png",

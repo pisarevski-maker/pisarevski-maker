@@ -4,3 +4,5 @@
 *.local.json
 node_modules/
 __pycache__/
+.wrangler/
+worker-configuration.d.ts

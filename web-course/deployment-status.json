@@ -1,9 +1,28 @@
 {
   "url": "https://wispy-wildflower-4a02.pisarevski.workers.dev",
-  "version_id": "f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd",
-  "previous_version_id": "e9fe2877-18dd-4375-90f6-49e090c9e3b2",
-  "verified_files": 56,
-  "total_files": 56,
+  "version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
+  "previous_version_id": "f7e609d6-b62f-4aa0-a983-bbdac6a4b6dd",
+  "total_files": 57,
+  "email_status": "Connected. Live test accepted; user confirmed arrival in Inbox.",
+  "browser_checks": {
+    "desktop": "Intro loaded at 1280x720 without page scroll; video readyState 4. Course step 5 navigation within viewport. Authors finale loaded without console errors.",
+    "mobile": "390x844: descriptive course and authors page; no horizontal overflow. Physical iOS device not tested."
+  },
+  "video_check": {
+    "intro": "Browser readyState 4; published file hash verified. Range request returned complete file with HTTP 200.",
+    "journey": "Published file hash verified."
+  },
+  "feedback_test": {
+    "status": 200,
+    "response": {
+      "ok": true
+    },
+    "version_id": "bdb8e718-1162-471c-8ef4-2f9c13f4807b",
+    "recipient_public": false,
+    "recipient_confirmed_received": true,
+    "recipient_confirmation": "User confirmed arrival in Inbox on 2026-10-31.",
+    "checks": "8 automated server tests passed; live form opens without console errors."
+  },
   "checks": [
     {
       "path": "app.html",
@@ -82,6 +101,11 @@
     },
     {
       "path": "assets/course-viewport.css",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "path": "assets/feedback.js",
       "status": 200,
       "sha256_matches": true
     },
@@ -286,5 +310,5 @@
       "sha256_matches": true
     }
   ],
-  "email_status": "Not connected: Cloudflare Email Sending API returned Unauthorized 2036. Form clearly reports that no message was sent."
+  "verified_files": 57
 }

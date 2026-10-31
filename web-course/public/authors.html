@@ -154,7 +154,7 @@ input:focus,textarea:focus{outline:2px solid #9bedff;outline-offset:2px}
     <div class="feedback-field"><label for="feedbackAuthor">Автор повідомлення</label><input id="feedbackAuthor" name="author" type="text" autocomplete="name" placeholder="Як до вас звертатися?" maxlength="100" required></div>
     <div class="feedback-field"><label for="feedbackSubject">Тема повідомлення</label><input id="feedbackSubject" name="subject" type="text" placeholder="Відгук, ідея або співпраця" maxlength="150" required></div>
     <div class="feedback-field"><label for="feedbackMessage">Зміст повідомлення</label><textarea id="feedbackMessage" name="message" placeholder="Напишіть ваше повідомлення…" maxlength="5000" required></textarea></div>
-    <div class="dialog-bottom"><p class="dialog-note" id="feedbackStatus" role="status">Поштове надсилання ще налаштовується.</p><button class="send-preview" type="submit">Відправити ↗</button></div>
+    <div class="dialog-bottom"><p class="dialog-note" id="feedbackStatus" role="status">Повідомлення надійде авторам на пошту.</p><button class="send-preview" type="submit">Відправити ↗</button></div>
   </form>
 </dialog>
 <script>
@@ -176,12 +176,9 @@ input:focus,textarea:focus{outline:2px solid #9bedff;outline-offset:2px}
   document.getElementById('openFeedback').addEventListener('click', () => dialog.showModal());
   document.getElementById('closeFeedback').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
-  document.getElementById('feedbackForm').addEventListener('submit', event => {
-    event.preventDefault();
-    document.getElementById('feedbackStatus').textContent = 'Поштове надсилання ще не підключено. Повідомлення не відправлене.';
-  });
 })();
 </script>
+<script src="assets/feedback.js?v=1" defer></script>
 <script src="assets/kinetic-caption.js?v=1" defer></script>
 </body>
 </html>

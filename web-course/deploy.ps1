@@ -3,10 +3,10 @@ param(
     [string]$WorkerName
 )
 
-# Publish static files to the existing Worker selected by the user.
+# Publish the site and its feedback handler to the existing Worker.
 Push-Location $PSScriptRoot
 try {
-    & npx --yes wrangler@latest deploy --assets ./public --name $WorkerName --compatibility-date 2026-10-30
+    & npx --yes wrangler@4.156.0 deploy --config ./wrangler.jsonc --name $WorkerName
     if ($LASTEXITCODE -ne 0) { throw 'Cloudflare deployment did not complete successfully.' }
 }
 finally {
